@@ -47,23 +47,23 @@ export default function TheLabClient() {
           <div className="w-full md:w-1/2 relative bg-gray-100 border-t-4 md:border-t-0 md:border-l-4 border-black flex items-center justify-center overflow-hidden min-h-[300px] md:min-h-auto">
              
              {/* 3D Box Simulation */}
-             <div className="relative w-48 h-48 md:w-64 md:h-64 animate-bounce-slow">
+             <div className="relative w-48 h-48 md:w-64 md:h-64 animate-bounce-slow z-10">
                 <div className="absolute inset-0 border-4 border-black bg-white transform rotate-3 z-10 shadow-hard flex items-center justify-center">
                     <TestTube className="w-24 h-24 text-kf-blue" />
                 </div>
                 <div className="absolute inset-0 border-4 border-black bg-kf-yellow transform -rotate-6 z-0"></div>
                 
                 {/* Floating Stickers */}
-                <div className="absolute -top-10 -right-10 bg-kf-green text-white font-black text-xs px-2 py-1 transform rotate-12 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                <div className="absolute -top-10 -right-10 bg-kf-green text-white font-black text-xs px-2 py-1 transform rotate-12 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-20">
                     QC PASSED
                 </div>
-                <div className="absolute -bottom-5 -left-10 bg-kf-red text-white font-black text-xs px-2 py-1 transform -rotate-12 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                <div className="absolute -bottom-5 -left-10 bg-kf-red text-white font-black text-xs px-2 py-1 transform -rotate-12 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-20">
                     REJECTED
                 </div>
              </div>
 
              {/* Background Grid */}
-             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+             <div className="absolute inset-0 opacity-10 z-0" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
           </div>
         </div>
       </section>
@@ -153,30 +153,30 @@ export default function TheLabClient() {
       </section>
 
       {/* 4. SECTION: THE REVIEW GRID */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 gap-y-12">
               {filteredItems.map(item => (
                   // WRAP THE WHOLE CARD IN A LINK TO THE DETAIL PAGE
                   <Link 
                     href={`/thelab/${item.id}`} 
                     key={item.id} 
-                    className="relative mt-6 group block hover:-translate-y-1 transition-transform duration-200 cursor-pointer"
+                    className="relative mt-6 group block hover:-translate-y-1 transition-transform duration-200 cursor-pointer z-10"
                   >
                       
                       {/* Folder Tab */}
-                      <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-4 border-b-0 border-black font-mono text-xs font-bold uppercase z-10">
+                      <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-4 border-b-0 border-black font-mono text-xs font-bold uppercase z-0 group-hover:z-20">
                           {item.category}
                       </div>
 
                       {/* Card Body */}
-                      <div className="bg-white border-4 border-black p-4 shadow-hard relative overflow-hidden h-full flex flex-col">
+                      <div className="bg-white border-4 border-black p-4 shadow-hard relative overflow-hidden h-full flex flex-col z-10">
                           
                           {/* Image */}
                           <div className="aspect-square bg-gray-100 border-2 border-black mb-4 relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-300">
                               <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                               
                               {/* STAMP */}
-                              <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-12 border-4 px-4 py-2 text-2xl font-black uppercase opacity-80 mix-blend-multiply
+                              <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-12 border-4 px-4 py-2 text-2xl font-black uppercase opacity-80 mix-blend-multiply z-20
                                   ${item.status === 'PASS' ? 'border-kf-green text-kf-green' : 'border-kf-red text-kf-red'}
                               `}>
                                   {item.status}
@@ -235,7 +235,7 @@ export default function TheLabClient() {
       </div>
       
       {/* Desktop Static Banner Exit */}
-      <div className="hidden md:block max-w-7xl mx-auto px-4 mt-12 mb-12">
+      <div className="hidden md:block max-w-7xl mx-auto px-4 mt-12 mb-12 relative z-10">
           <div className="bg-kf-yellow border-4 border-black p-12 flex items-center justify-between shadow-hard relative overflow-hidden">
                {/* Decorative Background */}
                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#000 2px, transparent 2px)', backgroundSize: '30px 30px' }}></div>

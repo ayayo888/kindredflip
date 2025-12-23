@@ -12,7 +12,7 @@ const TheLabGrid: React.FC<TheLabGridProps> = ({ items }) => {
   const displayItems = items.slice(0, 4);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 mt-4">
+    <div className="max-w-7xl mx-auto px-4 py-8 mt-4 relative z-20">
       
       {/* Header Section */}
       <div className="flex items-end justify-between mb-8 pb-4 border-b-4 border-black border-dashed">
@@ -33,23 +33,23 @@ const TheLabGrid: React.FC<TheLabGridProps> = ({ items }) => {
             <Link 
               key={item.id} 
               href={`/thelab/${item.id}`}
-              className="relative mt-6 group cursor-pointer hover:-translate-y-1 transition-transform duration-200 block"
+              className="relative mt-6 group cursor-pointer hover:-translate-y-1 transition-transform duration-200 block z-10"
             >
                       
                 {/* Folder Tab */}
-                <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-[3px] border-b-0 border-black font-mono text-xs font-bold uppercase z-10">
+                <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-[3px] border-b-0 border-black font-mono text-xs font-bold uppercase z-0 group-hover:z-20">
                     {item.category}
                 </div>
 
                 {/* Card Body */}
-                <div className="bg-white border-[3px] border-black p-4 shadow-hard relative overflow-hidden h-full flex flex-col">
+                <div className="bg-white border-[3px] border-black p-4 shadow-hard relative overflow-hidden h-full flex flex-col z-10">
                     
                     {/* Image */}
                     <div className="aspect-square bg-gray-100 border-2 border-black mb-4 relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-300">
                         <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                         
                         {/* STAMP */}
-                        <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-12 border-4 px-4 py-2 text-xl md:text-2xl font-black uppercase opacity-80 mix-blend-multiply
+                        <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-12 border-4 px-4 py-2 text-xl md:text-2xl font-black uppercase opacity-80 mix-blend-multiply z-20
                             ${item.status === 'PASS' ? 'border-kf-green text-kf-green' : 'border-kf-red text-kf-red'}
                         `}>
                             {item.status}

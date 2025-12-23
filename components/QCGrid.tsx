@@ -9,7 +9,7 @@ interface QCGridProps {
 
 const QCGrid: React.FC<QCGridProps> = ({ items }) => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 mt-4">
+    <div className="max-w-7xl mx-auto px-4 py-8 mt-4 relative z-20">
       
       {/* Header Section */}
       <div className="flex items-end justify-between mb-8 pb-4 border-b-4 border-black border-dashed">
@@ -27,9 +27,10 @@ const QCGrid: React.FC<QCGridProps> = ({ items }) => {
       {/* Grid Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((item) => (
-          <div 
+          <Link 
             key={item.id} 
-            className="group flex flex-col bg-white border-2 border-black rounded-2xl shadow-hard overflow-hidden hover:-translate-y-2 hover:shadow-hard-lg transition-all duration-200 cursor-pointer"
+            href="/thelab" // QC Items in this grid currently point to the general lab page as they are static examples
+            className="group flex flex-col bg-white border-2 border-black rounded-2xl shadow-hard overflow-hidden hover:-translate-y-2 hover:shadow-hard-lg transition-all duration-200 cursor-pointer relative z-10"
           >
             {/* Image Container */}
             <div className="relative aspect-square overflow-hidden bg-gray-100 border-b-2 border-black">
@@ -41,12 +42,12 @@ const QCGrid: React.FC<QCGridProps> = ({ items }) => {
             </div>
 
             {/* Content Container */}
-            <div className="p-4 flex-grow flex flex-col justify-between">
+            <div className="p-4 flex-grow flex flex-col justify-between bg-white">
               <h3 className="font-bold text-sm md:text-base leading-snug line-clamp-3 group-hover:text-kf-green transition-colors">
                 {item.title}
               </h3>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
