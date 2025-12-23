@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { 
   Database, Wifi, Footprints, Shirt, Laptop, ShoppingBag, Glasses, Terminal,
   Ghost, Trophy, Ruler, Coffee, Heart, Sparkles, Shield, Home, ChevronRight,
-  Check, AlertTriangle, ArrowRight, Plane
+  Check, AlertTriangle, ArrowRight, Plane, Copy, Lock, AlertOctagon
 } from 'lucide-react';
 import type { Metadata } from 'next';
 import { AGENT_LINKS } from '@/lib/constants';
@@ -71,7 +71,7 @@ export default async function AgentDetailPage(props: Props) {
           subTitle: 'IF ITEM IS "BLOCKED":',
           steps: [
               'COPY the "Product Link" (Weidian/Taobao URL)',
-              `LOCATE "Manual Order" form on ${name}`,
+              `LOCATE "Manual Order" or "Fill & Buy" form on ${name}`,
               "PASTE link & fill price/details manually",
               "SUBMIT agent order"
           ],
@@ -182,13 +182,123 @@ export default async function AgentDetailPage(props: Props) {
           </div>
       </section>
       
-      {/* ... Content Modules ... */}
-      <div className="max-w-5xl mx-auto px-4 mt-12 space-y-16">
-          {/* Reusing similar layout blocks for brevity in this response */}
-          <div className="bg-white border-4 border-black p-8">
-               <h2 className="font-black text-2xl uppercase mb-4">{content.intro.title}</h2>
-               <p>{content.intro.systemCheck}</p>
+      {/* MODULES CONTENT AREA */}
+      <div className="max-w-7xl mx-auto px-4 mt-12 space-y-12">
+          
+          {/* 1. INTRO & INTELLIGENCE LOG */}
+          <div className="bg-white border-4 border-black shadow-hard rounded-xl overflow-hidden">
+               <div className="bg-kf-offwhite border-b-4 border-black p-4 flex items-center justify-between">
+                   <h2 className="font-black text-xl md:text-2xl uppercase flex items-center gap-2">
+                       <Terminal className="w-6 h-6" /> {content.intro.title}
+                   </h2>
+                   <div className="font-mono text-xs font-bold text-kf-green hidden md:block">
+                       {content.intro.systemCheck}
+                   </div>
+               </div>
+               
+               <div className="p-8 grid md:grid-cols-3 gap-8">
+                   {content.intro.points.map((point, i) => (
+                       <div key={i} className="flex flex-col gap-2">
+                           <div className="flex items-center gap-2 mb-2">
+                               <div className="w-8 h-8 bg-black text-white flex items-center justify-center rounded-lg">
+                                   <point.icon className="w-4 h-4" />
+                               </div>
+                               <span className="font-black text-lg uppercase">{point.title}</span>
+                           </div>
+                           <p className="text-gray-600 font-bold text-sm pl-10 border-l-2 border-gray-200">
+                               {point.desc}
+                           </p>
+                       </div>
+                   ))}
+               </div>
           </div>
+
+          {/* 2. TIMELINE (PROCESS) */}
+          <div className="grid md:grid-cols-4 gap-4">
+              {content.timeline.map((step, i) => (
+                  <div key={i} className={`border-4 border-black p-6 rounded-xl shadow-hard relative overflow-hidden group hover:-translate-y-1 transition-transform ${step.color}`}>
+                      <div className="absolute top-2 right-2 font-black text-5xl opacity-10 group-hover:opacity-20 transition-opacity">
+                          {step.stepNumber}
+                      </div>
+                      <span className="inline-block bg-black text-white text-xs font-mono font-bold px-2 py-1 mb-4 rounded">
+                          STEP {step.stepNumber}
+                      </span>
+                      <h3 className="font-black text-2xl uppercase mb-2">{step.title}</h3>
+                      <p className="font-medium text-sm text-gray-600">{step.desc}</p>
+                  </div>
+              ))}
+          </div>
+
+          {/* 3. PROTOCOL & MANIFEST SPLIT */}
+          <div className="grid lg:grid-cols-2 gap-12">
+              
+              {/* Protocol: Bypass Warnings */}
+              <div className="bg-kf-red text-white border-4 border-black p-8 rounded-xl shadow-hard relative overflow-hidden">
+                   {/* Background warning stripes */}
+                   <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 10px, transparent 10px, transparent 20px)' }}></div>
+                   
+                   <div className="relative z-10">
+                       <div className="flex items-center gap-3 mb-6">
+                           <AlertOctagon className="w-8 h-8" />
+                           <div>
+                               <h3 className="font-black text-2xl uppercase leading-none">{content.protocol.title}</h3>
+                               <p className="font-mono text-xs opacity-80 mt-1">{content.protocol.subTitle}</p>
+                           </div>
+                       </div>
+                       
+                       <div className="space-y-4 font-mono text-sm md:text-base">
+                           {content.protocol.steps.map((step, i) => (
+                               <div key={i} className="flex gap-3 items-start bg-black/20 p-3 rounded-lg border border-white/20">
+                                   <span className="font-bold text-kf-yellow shrink-0">0{i+1}.</span>
+                                   <span>{step}</span>
+                               </div>
+                           ))}
+                       </div>
+                       
+                       <div className="mt-6 flex items-center gap-2 text-xs font-bold bg-black inline-block px-3 py-2 rounded border border-kf-yellow text-kf-yellow">
+                           <Lock className="w-3 h-3" /> {content.protocol.note}
+                       </div>
+                   </div>
+              </div>
+
+              {/* Manifest: Coupons & Shipping */}
+              <div className="flex flex-col gap-6">
+                  {/* Coupon Card */}
+                  <div className="bg-kf-yellow border-4 border-black p-6 rounded-xl shadow-hard flex flex-col items-center text-center justify-center flex-grow">
+                      <div className="font-black text-xl uppercase mb-2">{content.manifest.leftTitle}</div>
+                      <div className="text-6xl font-black mb-2 text-white text-stroke-black">{content.manifest.leftValue}</div>
+                      <div className="font-bold mb-6">{content.manifest.leftSub}</div>
+                      <a 
+                        href={spreadsheetUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black text-white px-8 py-3 font-black uppercase text-sm hover:bg-white hover:text-black border-2 border-transparent hover:border-black transition-all rounded-lg"
+                      >
+                          {content.manifest.leftBtn}
+                      </a>
+                  </div>
+
+                  {/* Shipping Lines */}
+                  <div className="bg-white border-4 border-black p-6 rounded-xl shadow-hard">
+                      <h4 className="font-black uppercase mb-4 text-center border-b-2 border-gray-100 pb-2">Recommended Lines</h4>
+                      <div className="space-y-3">
+                          {content.manifest.rightLines.map((line, i) => (
+                              <div key={i} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                                  <div className="flex items-center gap-3">
+                                      <div className="bg-kf-blue/10 p-2 rounded text-kf-blue">
+                                          <line.icon className="w-4 h-4" />
+                                      </div>
+                                      <span className="font-bold text-sm">{line.name}</span>
+                                  </div>
+                                  <span className="text-xs font-mono text-gray-500 font-bold">{line.desc}</span>
+                              </div>
+                          ))}
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
       </div>
     </div>
   );
