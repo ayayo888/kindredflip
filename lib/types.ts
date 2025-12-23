@@ -74,6 +74,7 @@ export interface ArticleItem {
 }
 
 export interface AgentLinkConfig {
-  spreadsheet: string;
-  affiliate?: string; 
+  spreadsheet: string;       // 主表格链接
+  affiliate?: string;        // 推广注册链接
+  categories?: Record<string, string>; // [新增] 各分类对应的表格链接 (Tab页)
 }

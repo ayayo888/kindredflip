@@ -12,14 +12,22 @@ export const SOCIAL_LINKS = {
 // 1. AGENT LINKS CONFIGURATION (Spreadsheets)
 // =====================================================================
 export const AGENT_LINKS: Record<string, AgentLinkConfig> = {
-  'cnfans': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-cnfans-link-here' },
+  'cnfans': { 
+      spreadsheet: 'https://docs.google.com/spreadsheets/d/your-cnfans-link-here',
+      // [配置示例] 为不同分类设置不同的表格链接 (通常是不同的 gid/Tab)
+      categories: {
+          'SHOES': 'https://docs.google.com/spreadsheets/d/your-cnfans-link-here/edit#gid=1111',
+          'HOODIES': 'https://docs.google.com/spreadsheets/d/your-cnfans-link-here/edit#gid=2222',
+          'TECH': 'https://docs.google.com/spreadsheets/d/your-cnfans-link-here/edit#gid=3333',
+      }
+  },
   'mulebuy': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-mulebuy-link-here' },
   'hoobuy': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-hoobuy-link-here' },
   'sugargoo': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-sugargoo-link-here' },
   'superbuy': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-superbuy-link-here' },
   'allchinabuy': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-allchinabuy-link-here' },
   
-  // 其他 Agent
+  // 其他 Agent (默认只配置主链接)
   'acbuy': { spreadsheet: '#' },
   'basetao': { spreadsheet: '#' },
   'bbdbuy': { spreadsheet: '#' },

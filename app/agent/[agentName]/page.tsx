@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { 
   Database, Wifi, Footprints, Shirt, Laptop, ShoppingBag, Glasses, Terminal,
   Ghost, Trophy, Ruler, Coffee, Heart, Sparkles, Shield, Home, ChevronRight,
-  Check, AlertTriangle, ArrowRight, Plane, Copy, Lock, AlertOctagon
+  Check, AlertTriangle, ArrowRight, Plane, Copy, Lock, AlertOctagon, ExternalLink
 } from 'lucide-react';
 import type { Metadata } from 'next';
 import { AGENT_LINKS } from '@/lib/constants';
@@ -35,6 +35,7 @@ export default async function AgentDetailPage(props: Props) {
   const name = formatName(params.agentName);
   const key = params.agentName.toLowerCase();
   
+  // Get Agent Config
   const agentConfig = AGENT_LINKS[key] || AGENT_LINKS['default'];
   const spreadsheetUrl = agentConfig.spreadsheet;
   
@@ -146,20 +147,32 @@ export default async function AgentDetailPage(props: Props) {
       <section className="bg-kf-offwhite border-b-4 border-black">
           <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-l-4 border-black">
-                  {GRID_CATEGORIES.map((cat, idx) => (
-                      <Link 
-                        href={`/gold?category=${cat.name.toLowerCase()}`} 
-                        key={idx}
-                        className="group relative aspect-square bg-white border-r-4 border-b-4 border-black hover:bg-kf-yellow transition-all duration-100 active:translate-y-1 active:bg-kf-yellow/80 cursor-pointer overflow-hidden"
-                      >
-                          <div className="absolute inset-0 flex items-center justify-center p-8 pb-12">
-                              <cat.icon strokeWidth={1.5} className="w-full h-full text-black group-hover:scale-110 transition-transform duration-200" />
-                          </div>
-                          <div className="absolute bottom-0 left-0 w-full bg-black text-white py-2 text-center border-t-4 border-black group-hover:bg-black group-hover:text-kf-yellow transition-colors">
-                              <span className="font-black text-lg md:text-xl tracking-wider">{cat.name}</span>
-                          </div>
-                      </Link>
-                  ))}
+                  {GRID_CATEGORIES.map((cat, idx) => {
+                      // Logic: 
+                      // 1. Convert Category name to UpperCase (e.g. 'SHOES')
+                      // 2. Check if a specific URL is configured for this agent + category
+                      // 3. If yes, use it. If no, fallback to the main spreadsheet URL.
+                      const catKey = cat.name.toUpperCase();
+                      const targetUrl = agentConfig.categories?.[catKey] || agentConfig.spreadsheet;
+                      
+                      return (
+                        <a 
+                            href={targetUrl} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            key={idx}
+                            className="group relative aspect-square bg-white border-r-4 border-b-4 border-black hover:bg-kf-yellow transition-all duration-100 active:translate-y-1 active:bg-kf-yellow/80 cursor-pointer overflow-hidden"
+                        >
+                            <div className="absolute inset-0 flex items-center justify-center p-8 pb-12">
+                                <cat.icon strokeWidth={1.5} className="w-full h-full text-black group-hover:scale-110 transition-transform duration-200" />
+                            </div>
+                            <div className="absolute bottom-0 left-0 w-full bg-black text-white py-2 text-center border-t-4 border-black group-hover:bg-black group-hover:text-kf-yellow transition-colors flex items-center justify-center gap-1">
+                                <span className="font-black text-lg md:text-xl tracking-wider">{cat.name}</span>
+                                <ExternalLink className="w-3 h-3 opacity-50" />
+                            </div>
+                        </a>
+                      );
+                  })}
               </div>
           </div>
       </section>

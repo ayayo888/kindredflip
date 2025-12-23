@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { ARTICLES } from '@/lib/constants';
 import { Star, Calendar, User, ArrowUpRight, Flame } from 'lucide-react';
 import Link from 'next/link';
@@ -9,12 +9,43 @@ import Image from 'next/image';
 const INITIAL_ITEMS_COUNT = 9; // 初始显示文章数量
 const LOAD_MORE_STEP = 6;      // 点击加载更多时增加的数量
 
-export default function GoldListClient() {
-  const [activeTag, setActiveTag] = useState('All');
+interface GoldListClientProps {
+  initialCategory?: string;
+}
+
+export default function GoldListClient({ initialCategory }: GoldListClientProps) {
+  // 辅助函数：标准化字符串（忽略大小写）
+  const normalize = (s: string) => s.toLowerCase();
+
+  // 根据 URL 参数解析初始标签
+  // 例如：URL传 'shoes' -> 匹配 constants.ts 里的 'Shoes'
+  const resolveInitialTag = () => {
+    if (!initialCategory) return 'All';
+    // 在所有文章的标签中查找匹配项
+    for (const article of ARTICLES) {
+        if (article.tags) {
+            const match = article.tags.find(t => normalize(t) === normalize(initialCategory));
+            if (match) return match;
+        }
+    }
+    return 'All';
+  };
+
+  const [activeTag, setActiveTag] = useState(resolveInitialTag);
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
 
+  // 监听 URL 参数变化（处理客户端导航，比如从 Agent 页点击分类跳转过来）
+  useEffect(() => {
+    if (initialCategory) {
+        const tag = resolveInitialTag();
+        if (tag !== 'All') {
+            setActiveTag(tag);
+            setVisibleCount(INITIAL_ITEMS_COUNT);
+        }
+    }
+  }, [initialCategory]);
+
   // 1. 动态提取标签 (Auto-update Tags)
-  // 遍历所有文章，收集 unique tags，并自动排序
   const allTags = useMemo(() => {
     const tags = new Set<string>(['All']);
     ARTICLES.forEach(article => {
@@ -22,7 +53,6 @@ export default function GoldListClient() {
         article.tags.forEach(tag => tags.add(tag));
       }
     });
-    // 转为数组并排序，保证 'All' 在最前面
     return Array.from(tags).sort((a, b) => {
       if (a === 'All') return -1;
       if (b === 'All') return 1;
@@ -36,13 +66,13 @@ export default function GoldListClient() {
     return ARTICLES.filter(article => article.tags && article.tags.includes(activeTag));
   }, [activeTag]);
 
-  // 3. 分页逻辑：只显示可见数量的文章
+  // 3. 分页逻辑
   const displayedArticles = filteredArticles.slice(0, visibleCount);
   const hasMore = visibleCount < filteredArticles.length;
 
   const handleTagChange = (tag: string) => {
     setActiveTag(tag);
-    setVisibleCount(INITIAL_ITEMS_COUNT); // 切换标签时重置显示数量，防止停留在列表底部
+    setVisibleCount(INITIAL_ITEMS_COUNT);
   };
 
   const handleLoadMore = () => {

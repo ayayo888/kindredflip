@@ -46,7 +46,35 @@
 
 ---
 
-## 🧪 第二部分：发布 The Lab 实验室评测 (LAB_ITEMS)
+## 🟢 第二部分：配置 Agent 详情页链接 (AGENT_LINKS)
+
+**对应页面**: `/agent/[agentName]`
+**适用场景**: 当您需要修改某个 Agent 的 Spreadsheet 主链接，或配置详情页下方分类图标（Shoes, Hoodies 等）的具体跳转链接时。
+
+在 `lib/constants.ts` 文件中，找到 `AGENT_LINKS` 对象。
+
+### 配置主表格 & 分类链接 (Tab页)
+通常 Google Spreadsheet 不同的分类在不同的 Sheet (Tab) 里。您可以复制每个 Tab 的链接（链接末尾通常带有 `#gid=xxxx`）填入配置中。
+
+```typescript
+'cnfans': { 
+  // 1. 主链接 (点击页面顶部大按钮时跳转)
+  spreadsheet: 'https://docs.google.com/spreadsheets/d/your-cnfans-link-here',
+  
+  // 2. 分类链接 (点击页面下方图标时跳转)
+  // Key 必须大写，例如: SHOES, HOODIES, TECH, BAGS
+  categories: {
+      'SHOES': 'https://docs.google.com/spreadsheets/d/.../edit#gid=111',
+      'HOODIES': 'https://docs.google.com/spreadsheets/d/.../edit#gid=222',
+      'TECH': 'https://docs.google.com/spreadsheets/d/.../edit#gid=333',
+      // 如果没有配置某个分类，系统会默认跳转到主链接
+  }
+},
+```
+
+---
+
+## 🧪 第三部分：发布 The Lab 实验室评测 (LAB_ITEMS)
 
 **重要说明：一个配置，两处显示。**
 您不需要分别配置列表页和详情页。系统会从同一个对象中读取不同的字段。
