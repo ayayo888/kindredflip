@@ -1,6 +1,7 @@
 import React from 'react';
-import { QCItem } from '../types';
+import { QCItem } from '../lib/types';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface QCGridProps {
   items: QCItem[];
@@ -13,15 +14,14 @@ const QCGrid: React.FC<QCGridProps> = ({ items }) => {
       {/* Header Section */}
       <div className="flex items-end justify-between mb-8 pb-4 border-b-4 border-black border-dashed">
         <div className="flex items-center gap-4">
-          {/* Green accent for QC to differentiate from Gold */}
           <div className="h-8 w-4 bg-kf-green skew-x-[-12deg] border-2 border-black"></div>
           <h2 className="text-3xl font-black uppercase tracking-wide">QC Guide</h2>
         </div>
         
-        <a href="#" className="group flex items-center gap-1 font-black text-lg hover:text-kf-blue transition-colors">
+        <Link href="/thelab" className="group flex items-center gap-1 font-black text-lg hover:text-kf-blue transition-colors">
           More
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </a>
+        </Link>
       </div>
 
       {/* Grid Section */}

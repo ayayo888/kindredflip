@@ -1,6 +1,7 @@
 import React from 'react';
-import { GoldItem } from '../types';
+import { GoldItem } from '../lib/types';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface GoldGridProps {
   items: GoldItem[];
@@ -17,16 +18,17 @@ const GoldGrid: React.FC<GoldGridProps> = ({ items }) => {
           <h2 className="text-3xl font-black uppercase tracking-wide">Gold Spreadsheet</h2>
         </div>
         
-        <a href="#" className="group flex items-center gap-1 font-black text-lg hover:text-kf-blue transition-colors">
+        <Link href="/gold" className="group flex items-center gap-1 font-black text-lg hover:text-kf-blue transition-colors">
           More
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </a>
+        </Link>
       </div>
 
       {/* Grid Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((item) => (
-          <div 
+          <Link 
+            href={`/gold/${item.id}`}
             key={item.id} 
             className="group flex flex-col bg-white border-2 border-black rounded-2xl shadow-hard overflow-hidden hover:-translate-y-2 hover:shadow-hard-lg transition-all duration-200 cursor-pointer"
           >
@@ -52,7 +54,7 @@ const GoldGrid: React.FC<GoldGridProps> = ({ items }) => {
                 {item.title}
               </h3>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { LabItem } from '../types';
-import { ArrowRight, TestTube } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { LabItem } from '../lib/types';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface TheLabGridProps {
   items: LabItem[];
@@ -21,13 +21,13 @@ const TheLabGrid: React.FC<TheLabGridProps> = ({ items }) => {
           <h2 className="text-3xl font-black uppercase tracking-wide">The Lab</h2>
         </div>
         
-        <Link to="/thelab" className="group flex items-center gap-1 font-black text-lg hover:text-kf-blue transition-colors">
+        <Link href="/thelab" className="group flex items-center gap-1 font-black text-lg hover:text-kf-blue transition-colors">
           View All Tests
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
 
-      {/* Grid Section - Using The Lab Page Visuals */}
+      {/* Grid Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gap-y-10">
         {displayItems.map((item) => (
             <div key={item.id} className="relative mt-6 group cursor-pointer hover:-translate-y-1 transition-transform duration-200">
@@ -71,7 +71,7 @@ const TheLabGrid: React.FC<TheLabGridProps> = ({ items }) => {
                     </div>
 
                     {/* Action */}
-                    <Link to="/thelab" className="w-full text-center bg-black text-white font-mono py-2 font-bold uppercase hover:bg-kf-yellow hover:text-black border-2 border-transparent hover:border-black transition-colors block text-sm">
+                    <Link href="/thelab" className="w-full text-center bg-black text-white font-mono py-2 font-bold uppercase hover:bg-kf-yellow hover:text-black border-2 border-transparent hover:border-black transition-colors block text-sm">
                         [ Read Report ]
                     </Link>
                 </div>
