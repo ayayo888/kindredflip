@@ -25,8 +25,10 @@ const Navbar: React.FC = () => {
   const [selectedLang, setSelectedLang] = useState(LANGUAGES[0]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  // Hook usage
-  const pathname = usePathname();
+  // Hook usage: Safely handle potential null at the top level
+  const rawPathname = usePathname();
+  // FORCE FIX: Ensure safePath is always a string, never null
+  const safePath = typeof rawPathname === 'string' ? rawPathname : '';
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b-4 border-black px-4 py-3 shadow-md">
@@ -43,13 +45,10 @@ const Navbar: React.FC = () => {
         {/* Center: Navigation Links (Desktop) */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {NAV_LINKS.map((link) => {
-             // FIX: Use currentPath and nullish coalescing to guarantee a string
-             // We renamed the variable to 'currentPath' to force a code change detection
-             const currentPath = pathname ?? '';
-             
+             // Logic to check active state using the safe variable
              const isActive = link.path === '/' 
-                ? currentPath === '/' 
-                : currentPath.startsWith(link.path);
+                ? safePath === '/' 
+                : safePath.startsWith(link.path);
 
              return (
                 <Link 
