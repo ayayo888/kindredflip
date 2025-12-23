@@ -24,6 +24,8 @@ const Navbar: React.FC = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState(LANGUAGES[0]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Hook usage
   const pathname = usePathname();
 
   return (
@@ -41,11 +43,13 @@ const Navbar: React.FC = () => {
         {/* Center: Navigation Links (Desktop) */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {NAV_LINKS.map((link) => {
-             // Active state check - Fix: Ensure pathname is not null
-             const currentPath = pathname || '';
+             // Safe Pathname Check
+             // Explicitly handle null case to satisfy TypeScript strict mode
+             const safePathname = pathname || '';
+             
              const isActive = link.path === '/' 
-                ? currentPath === '/' 
-                : currentPath.startsWith(link.path);
+                ? safePathname === '/' 
+                : safePathname.startsWith(link.path);
 
              return (
                 <Link 
