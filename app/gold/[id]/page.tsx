@@ -1,11 +1,11 @@
 import React from 'react';
 import { ARTICLES } from '@/lib/constants';
-import { Calendar, User, Star, ArrowLeft, ShoppingCart, Check, X, Share2, AlertCircle, ChevronDown, ExternalLink, Copy } from 'lucide-react';
+import { Calendar, User, Star, ArrowLeft, ShoppingCart, Check, X, Share2, AlertCircle, Copy } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import AgentSelector from '@/components/AgentSelector'; // Extract client interactivity
+import AgentSelector from '@/components/AgentSelector';
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const article = ARTICLES.find(a => a.id === params.id);

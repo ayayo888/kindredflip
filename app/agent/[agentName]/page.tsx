@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { 
-  Database, Wifi, Footprints, Shirt, Laptop, ShoppingBag, Glasses, Terminal,
+  Database, Wifi, Footprints, Shirt, Laptop, ShoppingBag, Glasses,
   Ghost, Trophy, Ruler, Coffee, Heart, Sparkles, Shield, Home, ChevronRight,
-  Check, AlertTriangle, ArrowRight, Plane, Package
+  Check, Plane
 } from 'lucide-react';
 import type { Metadata } from 'next';
 
