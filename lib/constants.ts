@@ -1,8 +1,56 @@
-import { CategoryItem, QCItem, ArticleItem, LabItem } from './types';
+import { CategoryItem, QCItem, ArticleItem, LabItem, AgentLinkConfig } from './types';
 
 // =====================================================================
-// 1. 首页分类 (CATEGORY GRID)
-// Order: Shoes, Hoodies, T-Shirts, Jackets, Jersey, Pants, Accessories, Bags, Tech, Lifestyle, Girls, Perfume
+// 0. SOCIAL MEDIA LINKS
+// =====================================================================
+export const SOCIAL_LINKS = {
+  discord: 'https://discord.gg/your-invite-code',
+  telegram: 'https://t.me/your-channel-link',
+};
+
+// =====================================================================
+// 1. AGENT LINKS CONFIGURATION (Spreadsheets)
+// =====================================================================
+export const AGENT_LINKS: Record<string, AgentLinkConfig> = {
+  'cnfans': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-cnfans-link-here' },
+  'mulebuy': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-mulebuy-link-here' },
+  'hoobuy': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-hoobuy-link-here' },
+  'sugargoo': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-sugargoo-link-here' },
+  'superbuy': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-superbuy-link-here' },
+  'allchinabuy': { spreadsheet: 'https://docs.google.com/spreadsheets/d/your-allchinabuy-link-here' },
+  
+  // 其他 Agent
+  'acbuy': { spreadsheet: '#' },
+  'basetao': { spreadsheet: '#' },
+  'bbdbuy': { spreadsheet: '#' },
+  'cnshopper': { spreadsheet: '#' },
+  'cssbuy': { spreadsheet: '#' },
+  'eastmallbuy': { spreadsheet: '#' },
+  'gtbuy': { spreadsheet: '#' },
+  'hipobuy': { spreadsheet: '#' },
+  'hubbuycn': { spreadsheet: '#' },
+  'itaobuy': { spreadsheet: '#' },
+  'joyagoo': { spreadsheet: '#' },
+  'kakobuy': { spreadsheet: '#' },
+  'kameymall': { spreadsheet: '#' },
+  'lovegobuy': { spreadsheet: '#' },
+  'npbuy': { spreadsheet: '#' },
+  'oopbuy': { spreadsheet: '#' },
+  'ootdbuy': { spreadsheet: '#' },
+  'orientdig': { spreadsheet: '#' },
+  'pantherbuy': { spreadsheet: '#' },
+  'pingubuy': { spreadsheet: '#' },
+  'ponybuy': { spreadsheet: '#' },
+  'rizzitgo': { spreadsheet: '#' },
+  'tigbuy': { spreadsheet: '#' },
+  'vigorbuy': { spreadsheet: '#' },
+
+  'default': { spreadsheet: 'https://docs.google.com/spreadsheets' }
+};
+
+
+// =====================================================================
+// 2. 首页分类 (CATEGORY GRID)
 // =====================================================================
 export const CATEGORIES: CategoryItem[] = [
   { 
@@ -10,88 +58,100 @@ export const CATEGORIES: CategoryItem[] = [
     name: 'Shoes', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/shoes_ocm0vz.png', 
     color: 'blue', 
-    itemCount: 1240 
+    itemCount: 1240,
+    href: '/gold?category=shoes' 
   },
   { 
     id: '2', 
     name: 'Hoodies', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/Hoodies_fpspfa.png', 
     color: 'red', 
-    itemCount: 850 
+    itemCount: 850,
+    href: '/gold?category=hoodies'
   },
   { 
     id: '3', 
     name: 'T-Shirts', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488589/t_jg2rrt.png',
     color: 'yellow', 
-    itemCount: 920 
+    itemCount: 920,
+    href: '/gold?category=t-shirts'
   },
   { 
     id: '4', 
     name: 'Jackets', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/jacket_lmg2kr.png',
     color: 'green', 
-    itemCount: 450 
+    itemCount: 450,
+    href: '/gold?category=jackets'
   },
   { 
     id: '5', 
     name: 'Jersey', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/Jersey_lmh6ob.png', 
     color: 'blue', 
-    itemCount: 210 
+    itemCount: 210,
+    href: '/gold?category=jersey'
   },
   { 
     id: '6', 
     name: 'Pants', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488589/pants_dnkfqu.png', 
     color: 'yellow', 
-    itemCount: 540 
+    itemCount: 540,
+    href: '/gold?category=pants'
   },
   { 
     id: '7', 
     name: 'Accessories', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/Accessories_n1sciy.png', 
     color: 'red', 
-    itemCount: 1100 
+    itemCount: 1100,
+    href: '/gold?category=accessories'
   },
   { 
     id: '8', 
     name: 'Bags', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/bags_vjalt6.png', 
     color: 'green', 
-    itemCount: 430 
+    itemCount: 430,
+    href: '/gold?category=bags'
   },
   { 
     id: '9', 
     name: 'Tech', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/tech_dh5t1u.png', 
     color: 'blue', 
-    itemCount: 320 
+    itemCount: 320,
+    href: '/gold?category=tech'
   },
   { 
     id: '10', 
     name: 'Lifestyle', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/Lifestyle_euf6oo.png', 
     color: 'yellow', 
-    itemCount: 150 
+    itemCount: 150,
+    href: '/gold?category=lifestyle'
   },
   { 
     id: '11', 
     name: 'Girls', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/girls_g4h2li.png',
     color: 'red', 
-    itemCount: 280 
+    itemCount: 280,
+    href: '/gold?category=girls'
   },
   { 
     id: '12', 
     name: 'Perfume', 
     image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/Perfume_ugwatb.png', 
     color: 'green', 
-    itemCount: 80 
+    itemCount: 80,
+    href: '/gold?category=perfume'
   },
 ];
 
-// 2. QC ITEMS
+// 3. QC ITEMS
 export const QC_ITEMS: QCItem[] = [
   {
     id: 'qc1',
@@ -115,7 +175,7 @@ export const QC_ITEMS: QCItem[] = [
   }
 ];
 
-// 3. LAB ITEMS
+// 4. LAB ITEMS
 export const LAB_ITEMS: LabItem[] = [
   {
     id: 'l1',
@@ -125,7 +185,26 @@ export const LAB_ITEMS: LabItem[] = [
     weight: '1.1kg',
     status: 'PASS',
     image: 'https://picsum.photos/400/400?random=101',
-    note: 'Stitching accurate. Toebox shape 1:1.'
+    note: 'Stitching accurate. Toebox shape 1:1. The leather feels slightly plasticky but acceptable for the price.',
+    date: '2025-10-20',
+    author: 'LabTech_01',
+    
+    // --- MANUAL SEO CONFIGURATION (Example) ---
+    seoTitle: 'Nike Dunk Low Panda VT Batch Review - Best Budget Batch 2025',
+    seoDescription: 'Full QC review of the $28 VT Batch Nike Dunk Panda. We verify weight, stitching, and leather quality. Find out if it is worth buying.',
+    seoKeywords: ['nike dunk low panda', 'vt batch dunks', 'cnfans shoes', 'budget dunks qc'],
+    // ------------------------------------------
+
+    content: [
+      "The VT Batch is widely considered the budget king for Dunks. We ordered these anonymously to verify if the quality holds up in late 2025.",
+      "The shape is excellent. The toebox flip matches retail pairs perfectly. The stitching on the swoosh is clean with no fraying.",
+      "However, the sole is slightly softer than retail. It might wear out faster if used for skating."
+    ],
+    rawLink: 'https://weidian.com/item.html?itemID=55555',
+    agentLinks: {
+        'CNfans': 'https://cnfans.com/product/example-pass',
+        'Mulebuy': 'https://mulebuy.com/product/example-pass'
+    }
   },
   {
     id: 'l2',
@@ -135,7 +214,15 @@ export const LAB_ITEMS: LabItem[] = [
     weight: '0.4kg',
     status: 'FAIL',
     image: 'https://picsum.photos/400/400?random=102',
-    note: 'Plastic hinge broke during stress test. Avoid.'
+    note: 'Plastic hinge broke during stress test. Avoid. Sound quality is also muffled.',
+    date: '2025-10-18',
+    author: 'AudioDave',
+    content: [
+      "We had high hopes for this $15 replica, but it failed our durability test immediately.",
+      "Upon first fold, the plastic hinge snapped. The materials used are extremely brittle recycled plastic.",
+      "Bluetooth connectivity drops after 5 meters. Do not waste your money on this batch."
+    ],
+    // No links for FAIL items
   },
   {
     id: 'l3',
@@ -145,7 +232,17 @@ export const LAB_ITEMS: LabItem[] = [
     weight: '0.9kg',
     status: 'PASS',
     image: 'https://picsum.photos/400/400?random=103',
-    note: 'Heavyweight cotton verified. Logo placement correct.'
+    note: 'Heavyweight cotton verified. Logo placement correct.',
+    date: '2025-10-15',
+    author: 'FashionKilla',
+    content: [
+      "This is a solid pass. The weight is 900g, which gives it that correct boxy drape.",
+      "The silicone logo on the chest is 3D and centered correctly. Previous batches had it too low."
+    ],
+    rawLink: 'https://taobao.com/item/123123',
+    agentLinks: {
+        'Hoobuy': 'https://hoobuy.com/product/example'
+    }
   },
   {
     id: 'l4',
@@ -155,7 +252,10 @@ export const LAB_ITEMS: LabItem[] = [
     weight: '0.2kg',
     status: 'FAIL',
     image: 'https://picsum.photos/400/400?random=104',
-    note: 'Strap text font is wrong (too thin).'
+    note: 'Strap text font is wrong (too thin). Zipper gets stuck.',
+    date: '2025-09-30',
+    author: 'HypeBeastCheck',
+    content: ["Font is completely wrong. Instant callout."],
   },
   {
     id: 'l5',
@@ -165,7 +265,11 @@ export const LAB_ITEMS: LabItem[] = [
     weight: '1.4kg',
     status: 'PASS',
     image: 'https://picsum.photos/400/400?random=105',
-    note: 'Surprisingly good for the price. Netting aligns correctly.'
+    note: 'Surprisingly good for the price. Netting aligns correctly.',
+    rawLink: 'https://weidian.com/item/444',
+    agentLinks: {
+        'CNfans': 'https://cnfans.com/product/example-j4'
+    }
   },
   {
     id: 'l6',
@@ -175,11 +279,15 @@ export const LAB_ITEMS: LabItem[] = [
     weight: '0.05kg',
     status: 'PASS',
     image: 'https://picsum.photos/400/400?random=106',
-    note: 'Lead test passed. No green skin.'
+    note: 'Lead test passed. No green skin.',
+    rawLink: 'https://taobao.com/item/ring',
+    agentLinks: {
+        'CNfans': 'https://cnfans.com/product/example-ring'
+    }
   },
 ];
 
-// 4. ARTICLES
+// 5. ARTICLES (Gold Items)
 export const ARTICLES: ArticleItem[] = [
   {
     id: 'a1',
@@ -192,6 +300,24 @@ export const ARTICLES: ArticleItem[] = [
     rating: 5,
     isFeatured: true, 
     isSale: true,
+    
+    // =======================================================
+    // 🔗 MANUAL LINK CONFIGURATION
+    // 在这里手动配置每个 Agent 的购买链接
+    // 1. rawLink: 淘宝/微店原链接 (用于 "Copy Link" 按钮)
+    // 2. agentLinks: 粘贴你在各平台的推广链接 (用于下拉菜单)
+    // =======================================================
+    rawLink: 'https://weidian.com/item.html?itemID=123456789',
+    
+    agentLinks: {
+        'CNfans': 'https://cnfans.com/product/?shop_type=weidian&id=123456789&ref=MY_CODE',
+        'Mulebuy': 'https://mulebuy.com/product/?url=https://weidian.com/item.html?itemID=123456789&inviteCode=MY_CODE',
+        'Hoobuy': 'https://hoobuy.com/product/2/123456789',
+        'Kakobuy': 'https://kakobuy.com/item/123456789',
+        // 如果这里不写某个 Agent，下拉菜单里就不会出现它
+    },
+    // =======================================================
+
     content: [
       "This phone mount has completely changed my driving setup. The magnet strength is incredible—even over speed bumps, my iPhone 15 Pro Max doesn't budge.",
       "Installation was a breeze. It uses a high-quality 3M adhesive that sticks to the dashboard texture without peeling off in the heat."
@@ -209,6 +335,13 @@ export const ARTICLES: ArticleItem[] = [
     rating: 4,
     isFeatured: true, 
     isSale: true,
+    
+    rawLink: 'https://item.taobao.com/item.htm?id=987654321', 
+    agentLinks: {
+        'CNfans': 'https://cnfans.com/product/?shop_type=taobao&id=987654321',
+        'Superbuy': 'https://superbuy.com/en/page/buy?url=https://item.taobao.com/item.htm?id=987654321',
+        'AllChinaBuy': 'https://www.allchinabuy.com/en/page/buy/?url=https://item.taobao.com/item.htm?id=987654321'
+    }
   },
   {
     id: 'a3',
@@ -221,6 +354,12 @@ export const ARTICLES: ArticleItem[] = [
     rating: 5,
     isFeatured: true, 
     isSale: false,
+    
+    rawLink: 'https://detail.1688.com/offer/11223344.html',
+    agentLinks: {
+        'CNfans': 'https://cnfans.com/product/?shop_type=1688&id=11223344',
+        'Hoobuy': 'https://hoobuy.com/product/0/11223344'
+    }
   },
   {
     id: 'a4',
@@ -233,6 +372,7 @@ export const ARTICLES: ArticleItem[] = [
     rating: 4,
     isFeatured: true,
     isSale: true,
+    // Example: No agent links configured yet, buttons will be disabled/hidden
   },
   {
     id: 'a5',

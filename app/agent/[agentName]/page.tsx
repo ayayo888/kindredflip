@@ -6,6 +6,7 @@ import {
   Check, AlertTriangle, ArrowRight, Plane, Package
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { AGENT_LINKS } from '@/lib/constants';
 
 // Helper function to format agent name (used in metadata and component)
 const formatName = (name: string) => {
@@ -29,6 +30,11 @@ export async function generateMetadata({ params }: { params: { agentName: string
 
 export default function AgentDetailPage({ params }: { params: { agentName: string } }) {
   const name = formatName(params.agentName);
+  const key = params.agentName.toLowerCase();
+  
+  // Retrieve configuration from constants, fallback to default if not found
+  const agentConfig = AGENT_LINKS[key] || AGENT_LINKS['default'];
+  const spreadsheetUrl = agentConfig.spreadsheet;
   
   // Categories for the Inventory Grid
   const GRID_CATEGORIES = [
@@ -177,9 +183,14 @@ export default function AgentDetailPage({ params }: { params: { agentName: strin
                   <Database className="w-6 h-6 text-kf-yellow" />
                   <span className="font-black text-2xl md:text-3xl uppercase text-kf-yellow tracking-tighter">Access Full Database</span>
               </div>
-              <button className="w-full md:w-auto px-8 py-3 border-2 border-white hover:bg-white hover:text-black transition-all font-mono font-bold text-sm uppercase flex items-center justify-center gap-2">
+              <a 
+                href={spreadsheetUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-8 py-3 border-2 border-white hover:bg-white hover:text-black transition-all font-mono font-bold text-sm uppercase flex items-center justify-center gap-2 cursor-pointer"
+              >
                   [ Open Google Sheet <ArrowRight className="w-4 h-4" /> ]
-              </button>
+              </a>
           </div>
       </section>
 

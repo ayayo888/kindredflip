@@ -1,6 +1,7 @@
 import React from 'react';
 import { CategoryItem } from '@/lib/types';
 import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface CategoryGridProps {
   categories: CategoryItem[];
@@ -32,9 +33,13 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ categories }) => {
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
           {categories.map((cat) => (
-            <div 
+            <Link 
               key={cat.id} 
-              className="group relative cursor-pointer"
+              href={cat.href}
+              className="group relative cursor-pointer block"
+              // Add support for external links if needed
+              target={cat.href.startsWith('http') ? '_blank' : undefined}
+              rel={cat.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             >
               {/* Card Container */}
               <div className="bg-white rounded-2xl border-2 border-black overflow-hidden shadow-hard transition-all duration-200 group-hover:-translate-y-2 group-hover:shadow-hard-lg">
@@ -63,7 +68,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ categories }) => {
               
               {/* Decorative "Under" Element (like the icon style) */}
               <div className={`absolute -z-10 top-2 -right-2 w-full h-full rounded-2xl border-2 border-black ${getColorClass(cat.color)} opacity-0 group-hover:opacity-100 transition-opacity duration-200`}></div>
-            </div>
+            </Link>
           ))}
         </div>
       )}

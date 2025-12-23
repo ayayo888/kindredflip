@@ -23,6 +23,10 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
   if (!article) {
     notFound();
   }
+  
+  // Logic: Only use the manually configured link for CNFans.
+  // If user didn't paste a CNFans link in `agentLinks`, the button is disabled.
+  const cnfansLink = article.agentLinks?.['CNfans'];
 
   return (
     <div className="bg-white pb-20">
@@ -181,11 +185,23 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
                         
                         {/* Primary Agent (CNFans) */}
                         <div className="mb-4">
-                            <button className="w-full bg-kf-red text-white py-4 rounded-xl border-2 border-black font-black text-xl shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all flex items-center justify-center gap-2 group relative overflow-hidden">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-white/20"></div>
-                                <ShoppingCart className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-                                BUY ON CNFANS
-                            </button>
+                            {cnfansLink ? (
+                                <a 
+                                    href={cnfansLink} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full bg-kf-red text-white py-4 rounded-xl border-2 border-black font-black text-xl shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all flex items-center justify-center gap-2 group relative overflow-hidden block"
+                                >
+                                    <div className="absolute top-0 left-0 w-full h-1 bg-white/20"></div>
+                                    <ShoppingCart className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+                                    BUY ON CNFANS
+                                </a>
+                            ) : (
+                                <button disabled className="w-full bg-gray-300 text-gray-500 py-4 rounded-xl border-2 border-gray-400 font-black text-xl flex items-center justify-center gap-2 cursor-not-allowed">
+                                    <ShoppingCart className="w-6 h-6" />
+                                    OUT OF STOCK
+                                </button>
+                            )}
                             <p className="mt-2 text-[10px] text-gray-400 font-bold uppercase tracking-wide">
                                 Recommended Agent
                             </p>
@@ -199,17 +215,28 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
                         </div>
 
                         {/* Agent Selector Client Component */}
-                        <AgentSelector />
+                        <AgentSelector 
+                            agentLinks={article.agentLinks} 
+                        />
                     </div>
                     
-                    {/* Copy Link Helper */}
-                    <div className="group cursor-pointer bg-kf-black text-white p-3 rounded-lg border-2 border-black shadow-sm flex items-center justify-between hover:bg-kf-yellow hover:text-black transition-colors">
-                        <div className="flex items-center gap-2">
-                            <span className="font-bold text-xs uppercase">Copy Raw Link</span>
-                            <span className="text-[10px] opacity-60">(Taobao/Weidian)</span>
+                    {/* Copy Link Helper - Only shows if rawLink is present */}
+                    {article.rawLink && (
+                        <div className="group cursor-pointer bg-kf-black text-white p-3 rounded-lg border-2 border-black shadow-sm flex items-center justify-between hover:bg-kf-yellow hover:text-black transition-colors"
+                             title={article.rawLink} // Simple tooltip
+                             onClick={() => {
+                                 // Basic copy functionality
+                                 navigator.clipboard.writeText(article.rawLink || '');
+                                 alert('Raw link copied to clipboard!');
+                             }}
+                        >
+                            <div className="flex items-center gap-2">
+                                <span className="font-bold text-xs uppercase">Copy Raw Link</span>
+                                <span className="text-[10px] opacity-60">(Taobao/Weidian)</span>
+                            </div>
+                            <Copy className="w-4 h-4" />
                         </div>
-                        <Copy className="w-4 h-4" />
-                    </div>
+                    )}
 
                     {/* Disclaimer */}
                     <div className="bg-kf-offwhite border-2 border-gray-200 p-4 rounded-xl flex gap-3">

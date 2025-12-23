@@ -1,4 +1,5 @@
 import React from 'react';
+import { SOCIAL_LINKS } from '@/lib/constants';
 
 const Hero: React.FC = () => {
   return (
@@ -18,12 +19,22 @@ Shop the Gold Tag for items tested for safety and materials.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <button className="bg-kf-red text-white px-8 py-4 rounded-xl border-2 border-black font-black text-lg shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+          <a 
+            href={SOCIAL_LINKS.discord}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-kf-red text-white px-8 py-4 rounded-xl border-2 border-black font-black text-lg shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer"
+          >
             Join Discord
-          </button>
-          <button className="bg-white text-black px-8 py-4 rounded-xl border-2 border-black font-black text-lg shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+          </a>
+          <a 
+            href={SOCIAL_LINKS.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-black px-8 py-4 rounded-xl border-2 border-black font-black text-lg shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer"
+          >
             Join Telegram
-          </button>
+          </a>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Send } from 'lucide-react';
+import { SOCIAL_LINKS } from '@/lib/constants';
 
 const SocialFloater: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const SocialFloater: React.FC = () => {
         
         {/* Discord Button */}
         <a 
-          href="#" 
+          href={SOCIAL_LINKS.discord} 
           target="_blank" 
           rel="noopener noreferrer"
           className="group flex items-center justify-end relative transition-all duration-300 ease-out"
@@ -34,7 +35,7 @@ const SocialFloater: React.FC = () => {
 
         {/* Telegram Button */}
         <a 
-          href="#" 
+          href={SOCIAL_LINKS.telegram}
           target="_blank" 
           rel="noopener noreferrer"
           className="group flex items-center justify-end relative transition-all duration-300 ease-out"
