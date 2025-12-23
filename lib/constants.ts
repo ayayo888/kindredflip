@@ -410,5 +410,5 @@ export const SITE_CONFIG = {
   // 1. 浏览器标签页 (Favicon)
   // 2. 网站导航栏左上角的 Logo
   // 3. 手机添加到主屏幕的图标
-  icon: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/shoes_ocm0vz.png', // 示例图片，请替换
+  icon: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766500843/fra_nam9p0.png', // 示例图片，请替换
 };
