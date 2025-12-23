@@ -1,5 +1,5 @@
 import React from 'react';
-import { CategoryItem } from '../types';
+import { CategoryItem } from '@/lib/types';
 import { ArrowUpRight } from 'lucide-react';
 
 interface CategoryGridProps {
