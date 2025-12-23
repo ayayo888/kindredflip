@@ -1,8 +1,13 @@
-'use client';
-
 import React from 'react';
 import { Server, Ticket, Database, Wifi, Scale, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'China Agent Database 2026 | All Spreadsheets & Coupon Codes',
+  description: 'Looking for alternatives? Access verified Spreadsheets and $100+ Coupon Bundles for 30+ China shopping agents (Mulebuy, Hoobuy, Sugargoo & more). Updated daily.',
+  keywords: 'china agent spreadsheet, mulebuy spreadsheet, hoobuy spreadsheet, agent coupons, sugargoo alternatives',
+};
 
 // Raw data for the database - Sorted Alphabetically
 const AGENT_LIST = [
@@ -36,8 +41,7 @@ export default function AgentDatabasePage() {
               </div>
               
               <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6">
-                 The Agent <br/>
-                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500">Database</span>
+                 THE AGENT DATABASE
               </h1>
               
               <p className="font-medium text-gray-400 max-w-lg text-lg border-l-2 border-kf-green pl-4">

@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: { agentName: string
     const name = params.agentName.charAt(0).toUpperCase() + params.agentName.slice(1);
     return {
         title: `${name} Spreadsheet 2026 | Verified Links & Coupon Codes List`,
-        description: `The most comprehensive ${name} Spreadsheet. Access 3,000+ QC-verified finds for Sneakers, Streetwear, and Tech.`,
+        description: `The most comprehensive ${name} Spreadsheet. Access 3,000+ QC-verified finds for Sneakers, Streetwear, and Tech. Includes guide on How to Order via ${name} and latest working shipping codes.`,
     };
 }
 
@@ -44,7 +44,7 @@ export default function AgentDetailPage({ params }: { params: { agentName: strin
 
   // Generic Content Configuration
   const content = {
-      headerTitle: `${name} SPREADSHEET`,
+      headerTitle: `${name} Spreadsheet`, // Matches SEO.md H1
       statsLabel: "DATABASE SIZE",
       statsValue: "3,402 ITEMS",
       intro: {

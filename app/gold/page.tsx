@@ -7,7 +7,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: '1:1 Reps CNfans Spreadsheet 2026 | Verified "Gold" Batches',
-  description: 'Stop settling for budget flaws. Access the ultimate list of 1:1 Reps for CNfans. Verified "Gold Tier" items only.',
+  description: 'Stop settling for budget flaws. Access the ultimate list of 1:1 Reps for CNfans. Every item is Verified "Gold Tier"—closest to retail batches only. No lemons.',
+  keywords: '1:1 reps, gold batch, cnfans verified, high quality reps, best batches 2026',
 };
 
 const GoldListPage: React.FC = () => {

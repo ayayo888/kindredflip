@@ -1,10 +1,11 @@
 import React from 'react';
-import { GoldItem } from '../lib/types';
+import { ArticleItem } from '../lib/types';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 interface GoldGridProps {
-  items: GoldItem[];
+  // Now accepts ArticleItem array which is our single source of truth
+  items: ArticleItem[];
 }
 
 const GoldGrid: React.FC<GoldGridProps> = ({ items }) => {
@@ -28,7 +29,7 @@ const GoldGrid: React.FC<GoldGridProps> = ({ items }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((item) => (
           <Link 
-            href={`/gold/${item.id}`}
+            href={`/gold/${item.id}`} // Ensures clicking goes to the detail page
             key={item.id} 
             className="group flex flex-col bg-white border-2 border-black rounded-2xl shadow-hard overflow-hidden hover:-translate-y-2 hover:shadow-hard-lg transition-all duration-200 cursor-pointer"
           >
@@ -40,8 +41,8 @@ const GoldGrid: React.FC<GoldGridProps> = ({ items }) => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               
-              {/* Sale Badge */}
-              {item.isSale && (
+              {/* Sale/Gold Badge */}
+              {(item.isSale || item.isFeatured) && (
                 <div className="absolute bottom-3 left-3 bg-kf-blue text-white px-3 py-1 rounded-full border-2 border-black font-bold text-sm shadow-sm">
                   Gold
                 </div>

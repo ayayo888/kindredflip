@@ -11,6 +11,8 @@ export interface NavLink {
   href: string;
 }
 
+// 统一使用 ArticleItem，废弃独立的 GoldItem 定义，但在组件中我们可能还是会用到这个接口名作为 Props
+// 为了兼容，我们让 GoldGrid 接收 ArticleItem
 export interface GoldItem {
   id: string;
   title: string;
@@ -49,4 +51,8 @@ export interface ArticleItem {
   pros?: string[];
   cons?: string[];
   verdict?: string;
+  
+  // NEW: Control homepage visibility
+  isFeatured?: boolean; 
+  isSale?: boolean; // Optional: Show a "Sale" or "Gold" badge on the card
 }

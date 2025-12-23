@@ -1,5 +1,15 @@
-import { CategoryItem, GoldItem, QCItem, ArticleItem, LabItem } from './types';
+import { CategoryItem, QCItem, ArticleItem, LabItem } from './types';
 
+// =====================================================================
+// CLOUDINARY 图片替换指南
+// =====================================================================
+// 1. 在 Cloudinary 后台上传图片。
+// 2. 复制图片链接 (URL)。
+// 3. 将链接粘贴到下方对应的 'image' 字段中。
+// 4. 推荐在链接中加入 f_auto,q_auto 以自动优化速度。
+// =====================================================================
+
+// 1. 首页分类 (CATEGORY GRID)
 export const CATEGORIES: CategoryItem[] = [
   { id: '1', name: 'Shoes', image: 'https://picsum.photos/400/400?random=1', color: 'blue', itemCount: 1240 },
   { id: '2', name: 'Hoodies', image: 'https://picsum.photos/400/400?random=2', color: 'red', itemCount: 850 },
@@ -15,33 +25,7 @@ export const CATEGORIES: CategoryItem[] = [
   { id: '12', name: 'Other Stuff', image: 'https://picsum.photos/400/400?random=12', color: 'green', itemCount: 999 },
 ];
 
-export const GOLD_ITEMS: GoldItem[] = [
-  {
-    id: 'g1',
-    title: '[GOLD] Snanen 360° Magnetic Suction Phone Mount - The Ultimate Hands-Free Holder',
-    image: 'https://picsum.photos/500/500?random=20',
-    isSale: true
-  },
-  {
-    id: 'g2',
-    title: '[GOLD] AimoStand – Built-in AI Camera Smart Auto-Tracking Phone Stand',
-    image: 'https://picsum.photos/500/500?random=21',
-    isSale: true
-  },
-  {
-    id: 'g3',
-    title: '[GOLD] CyanVue AI Smart Glasses – 8MP Camera Glasses with Music & Call Features',
-    image: 'https://picsum.photos/500/500?random=22',
-    isSale: true
-  },
-  {
-    id: 'g4',
-    title: '[GOLD] Carvera Smart 10.26" CarPlay & 4K Dual-Dash Cam System',
-    image: 'https://picsum.photos/500/500?random=23',
-    isSale: true
-  },
-];
-
+// 2. 首页 QC 指南 (QC GUIDE)
 export const QC_ITEMS: QCItem[] = [
   {
     id: 'qc1',
@@ -65,6 +49,7 @@ export const QC_ITEMS: QCItem[] = [
   }
 ];
 
+// 3. 实验室评测 (THE LAB)
 export const LAB_ITEMS: LabItem[] = [
   {
     id: 'l1',
@@ -128,84 +113,92 @@ export const LAB_ITEMS: LabItem[] = [
   },
 ];
 
+// 4. 文章详情与首页推荐 (ARTICLES & GOLD ITEMS)
+// ---------------------------------------------------------------------
+// 使用说明:
+// 1. 如果你想在首页显示这篇文章，设置 isFeatured: true
+// 2. 首页会自动读取这里的数据。
+// 3. 点击首页卡片会自动跳转到 /gold/{id} 详情页。
+// ---------------------------------------------------------------------
 export const ARTICLES: ArticleItem[] = [
   {
     id: 'a1',
-    title: 'REVIEW: The Definitive Guide to GX Batch Jordan 4s (2025)',
-    excerpt: 'We bought 5 pairs of Black Cats from different sellers. Here is why GX batch is still the king of the heavy-hitters list.',
-    image: 'https://picsum.photos/800/600?random=50',
+    title: '[GOLD] Snanen 360° Magnetic Suction Phone Mount - Hands-Free',
+    excerpt: 'The ultimate hands-free holder tested for stability and magnet strength.',
+    image: 'https://picsum.photos/500/500?random=20',
     date: 'Oct 12, 2025',
     author: 'RepMaster_J',
-    tags: ['Shoes', 'Review', 'Jordan'],
+    tags: ['Tech', 'Accessories', 'Review'],
     rating: 5,
+    isFeatured: true, // ✅ 这会在首页显示
+    isSale: true,
     content: [
-        "The Jordan 4 Black Cat has been the most requested shoe on the spreadsheet for three years running. With the closure of the Pandabuy era and the rise of CNFans, factory names have shifted, but the molds remain largely the same. In this review, we're looking exclusively at the 'GX Batch' (formerly known as KW) to see if it still holds the crown in late 2025.",
-        "First impressions out of the box: The material is spot on. The nubuck has that correct 'movement' when you brush your finger across it—a feature that budget batches like KX or G-Batch often miss completely. The weight is substantial, feeling almost identical to my retail pair from 2020.",
-        "Let's talk about the tongue. This is usually the biggest giveaway. On this updated 2025 run, GX has finally fixed the 'puffy tongue' issue. It's properly padded without looking like a skate shoe from 2005. The jumpman patch is placed with the correct spacing from the top edge.",
-        "The sole firmness is another win. It doesn't squish under pressure. We did the 'squeeze test' on the heel, and it holds its shape perfectly, indicating correct density PU material was used.",
-        "Conclusion: For roughly $65 USD before shipping, this is indistinguishable on-foot. Unless someone is taking a magnifying glass to the inner stitching while you're walking, you are good to go."
+      "This phone mount has completely changed my driving setup. The magnet strength is incredible—even over speed bumps, my iPhone 15 Pro Max doesn't budge.",
+      "Installation was a breeze. It uses a high-quality 3M adhesive that sticks to the dashboard texture without peeling off in the heat."
     ],
-    pros: [
-        "Nubuck material has correct texture and movement",
-        "Tongue shape and padding volume is fixed in 2025 batch",
-        "Heel tab jumps back up instantly (Back tab test passed)",
-        "Correct 6-hole netting angle"
-    ],
-    cons: [
-        "Smell is strong out of the box (needs airing out)",
-        "Box came slightly damaged (typical shipping issue)",
-        " laces feel slightly thinner than retail"
-    ],
-    verdict: "The absolute best bang for your buck. Don't waste money on 'LJR' for Black Cats, GX is superior for this specific colorway."
+    verdict: "A must-have for anyone who uses GPS navigation daily. 10/10 stability."
   },
   {
     id: 'a2',
-    title: 'COMPARISON: Arc\'teryx Beta LT - 380CNY vs Retail',
-    excerpt: 'Is the waterproofing actually real? We showered in it, ran in the rain, and poured soda on it. The results might surprise you.',
-    image: 'https://picsum.photos/800/600?random=51',
+    title: '[GOLD] AimoStand – AI Smart Tracking Phone Stand',
+    excerpt: 'Built-in AI Camera Smart Auto-Tracking Phone Stand review.',
+    image: 'https://picsum.photos/500/500?random=21',
     date: 'Oct 08, 2025',
     author: 'TechWearAddict',
-    tags: ['Tech', 'Comparison', 'Outerwear'],
-    rating: 4
+    tags: ['Tech', 'Review'],
+    rating: 4,
+    isFeatured: true, // ✅ 这会在首页显示
+    isSale: true,
   },
   {
     id: 'a3',
-    title: 'DEEP DIVE: Top 10 Hidden Gems on CNFans Under $10',
-    excerpt: 'From KAWS keychains to unbranded heavy cotton tees. Fill up your haul weight with these absolute steals.',
-    image: 'https://picsum.photos/800/600?random=52',
+    title: '[GOLD] CyanVue AI Smart Glasses – 8MP Camera',
+    excerpt: 'Smart glasses with music & call features. Are they worth the hype?',
+    image: 'https://picsum.photos/500/500?random=22',
     date: 'Sept 29, 2025',
     author: 'HaulGod',
-    tags: ['Accessories', 'Budget', 'Guide'],
-    rating: 5
+    tags: ['Tech', 'Wearable'],
+    rating: 5,
+    isFeatured: true, // ✅ 这会在首页显示
+    isSale: false,
   },
   {
     id: 'a4',
-    title: 'GUIDE: How to Size Your Balenciaga Tracks Correctly',
-    excerpt: 'Don\'t waste shipping money on the wrong size. We break down the fit for Good Batch, OK Batch, and Retail.',
-    image: 'https://picsum.photos/800/600?random=53',
+    title: '[GOLD] Carvera Smart 10.26" CarPlay & 4K Dual-Dash Cam',
+    excerpt: 'Upgrade your old car with this plug-and-play CarPlay screen.',
+    image: 'https://picsum.photos/500/500?random=23',
     date: 'Sept 15, 2025',
-    author: 'SneakerHead99',
-    tags: ['Shoes', 'Sizing', 'Guide'],
-    rating: 4
+    author: 'CarMods',
+    tags: ['Car', 'Tech'],
+    rating: 4,
+    isFeatured: true, // ✅ 这会在首页显示
+    isSale: true,
   },
   {
     id: 'a5',
-    title: 'REVIEW: Air Pods Max Metal Version - Connectivity Test',
-    excerpt: 'Do the spatial audio features actually work? Testing the latest V3 chipset against the real deal.',
-    image: 'https://picsum.photos/800/600?random=54',
+    title: 'REVIEW: The Definitive Guide to GX Batch Jordan 4s (2025)',
+    excerpt: 'We bought 5 pairs of Black Cats. Here is why GX batch is king.',
+    image: 'https://picsum.photos/800/600?random=50',
     date: 'Sept 10, 2025',
-    author: 'AudioPhileRep',
-    tags: ['Tech', 'Electronics', 'Review'],
-    rating: 3
+    author: 'SneakerHead99',
+    tags: ['Shoes', 'Review'],
+    rating: 5,
+    isFeatured: false, // ❌ 这不会在首页 Gold 区域显示，但会在 /gold 列表页显示
+    content: ["Full review content here..."]
   },
    {
     id: 'a6',
     title: 'HAUL REVIEW: 15kg Summer Haul - Stussy, Corteiz, Nike',
-    excerpt: 'A massive breakdown of my latest shipment. Shipping prices, transit times, and in-hand feel of every item.',
+    excerpt: 'A massive breakdown of my latest shipment.',
     image: 'https://picsum.photos/800/600?random=55',
     date: 'Aug 22, 2025',
     author: 'FashionKilla',
-    tags: ['Haul', 'Summer', 'Clothing'],
-    rating: 5
+    tags: ['Haul', 'Summer'],
+    rating: 5,
+    isFeatured: false
   }
 ];
+
+// 自动生成首页 Gold Items 列表
+// 不需要手动维护这个数组了！
+export const GOLD_ITEMS = ARTICLES.filter(item => item.isFeatured);

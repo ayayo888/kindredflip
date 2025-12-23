@@ -9,13 +9,7 @@ const Hero: React.FC = () => {
         </div>
         
         <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-          The Only CNfans Spreadsheet You Need <br/>
-          <span className="text-kf-blue relative inline-block">
-            2026
-            <svg className="absolute w-full h-4 -bottom-1 left-0 text-kf-red" viewBox="0 0 100 10" preserveAspectRatio="none">
-              <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
-            </svg>
-          </span>
+          The Only CNfans Spreadsheet You Need 2026
         </h1>
         
         <p className="text-lg md:text-xl font-bold text-gray-600 mb-8 max-w-2xl mx-auto">
