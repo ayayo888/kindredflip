@@ -7,38 +7,24 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import AgentSelector from '@/components/AgentSelector';
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+type Props = {
+  params: Promise<{ id: string }> | { id: string };
+};
+
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const item = LAB_ITEMS.find(a => a.id === params.id);
   if (!item) return { title: 'Lab Test Not Found' };
   
-  // 1. Auto-Generated Defaults (Fallback)
   const icon = item.status === 'PASS' ? '✅' : '❌';
-  const actionText = item.status === 'PASS' ? 'Verified Batch' : 'DO NOT BUY';
-  const autoTitle = `${icon} Review: ${item.title} - ${item.status} | The Lab`;
-  const autoDesc = `[${actionText}] Full QC Lab Report. Verdict: ${item.note} Weight: ${item.weight}. Price: ${item.price}. Category: ${item.category}.`;
-
-  // 2. Prioritize Manual SEO Fields if present
   return {
-    title: item.seoTitle || autoTitle,
-    description: item.seoDescription || autoDesc,
-    keywords: item.seoKeywords || ['cnfans qc', 'reps review', item.category.toLowerCase(), item.title],
-    openGraph: {
-        title: item.seoTitle || `${icon} Review: ${item.title} (${item.status})`,
-        description: item.seoDescription || item.note,
-        images: [
-            {
-                url: item.image,
-                width: 800,
-                height: 800,
-                alt: `${item.title} QC Review`,
-            }
-        ],
-        type: 'article',
-    }
+    title: item.seoTitle || `${icon} Review: ${item.title} - ${item.status} | The Lab`,
+    description: item.seoDescription || item.note,
   };
 }
 
-export default function LabDetailPage({ params }: { params: { id: string } }) {
+export default async function LabDetailPage(props: Props) {
+  const params = await props.params;
   const item = LAB_ITEMS.find(a => a.id === params.id);
 
   if (!item) {
@@ -198,9 +184,6 @@ export default function LabDetailPage({ params }: { params: { id: string } }) {
                 <div className="sticky top-24 space-y-6">
                     
                     {isPass ? (
-                        // =======================
-                        // PASS: Show Buying Links
-                        // =======================
                         <>
                             <div className="bg-white border-2 border-black p-6 rounded-xl shadow-hard text-center relative z-20">
                                 <h3 className="text-xl font-black uppercase mb-2">Verified Batch</h3>
@@ -228,40 +211,26 @@ export default function LabDetailPage({ params }: { params: { id: string } }) {
                                     )}
                                 </div>
 
-                                {/* Divider */}
                                 <div className="relative flex py-2 items-center mb-4">
                                     <div className="flex-grow border-t-2 border-gray-200"></div>
                                     <span className="flex-shrink-0 mx-4 text-gray-400 text-xs font-black uppercase">Or choose another</span>
                                     <div className="flex-grow border-t-2 border-gray-200"></div>
                                 </div>
 
-                                {/* Agent Selector */}
-                                <AgentSelector 
-                                    agentLinks={item.agentLinks} 
-                                />
+                                <AgentSelector agentLinks={item.agentLinks} />
                             </div>
 
-                            {/* Copy Link Helper */}
                             {item.rawLink && (
-                                <div className="group cursor-pointer bg-kf-black text-white p-3 rounded-lg border-2 border-black shadow-sm flex items-center justify-between hover:bg-kf-yellow hover:text-black transition-colors"
-                                     onClick={() => {
-                                         navigator.clipboard.writeText(item.rawLink || '');
-                                         alert('Raw link copied!');
-                                     }}
-                                >
+                                <div className="bg-kf-black text-white p-3 rounded-lg border-2 border-black shadow-sm flex items-center justify-between" title={item.rawLink}>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-bold text-xs uppercase">Copy Raw Link</span>
+                                        <span className="font-bold text-xs uppercase">Raw Link Available</span>
                                     </div>
                                     <Copy className="w-4 h-4" />
                                 </div>
                             )}
                         </>
                     ) : (
-                        // =======================
-                        // FAIL: Show Warning
-                        // =======================
                         <div className="bg-kf-red/10 border-4 border-kf-red p-6 rounded-xl text-center relative overflow-hidden">
-                            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 10px, transparent 10px, transparent 20px)' }}></div>
                             <div className="relative z-10">
                                 <div className="w-16 h-16 bg-kf-red rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-black">
                                     <AlertOctagon className="w-8 h-8 text-white" />
@@ -270,14 +239,10 @@ export default function LabDetailPage({ params }: { params: { id: string } }) {
                                 <p className="font-bold text-sm text-gray-800">
                                     This item failed our quality inspection. 
                                 </p>
-                                <div className="mt-4 p-3 bg-white border-2 border-kf-red rounded-lg text-xs font-bold text-kf-red uppercase">
-                                    Links Removed for Safety
-                                </div>
                             </div>
                         </div>
                     )}
 
-                    {/* Disclaimer */}
                     <div className="bg-white border-2 border-gray-200 p-4 rounded-xl flex gap-3">
                         <AlertTriangle className="w-8 h-8 text-gray-400 flex-shrink-0" />
                         <p className="text-[10px] text-gray-500 font-semibold leading-tight">

@@ -7,7 +7,14 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import AgentSelector from '@/components/AgentSelector';
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+// Flexible type definition for Next.js 14 (object) and 15 (Promise) compatibility
+type Props = {
+  params: Promise<{ id: string }> | { id: string };
+};
+
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  // Await params to handle both Promise and Object cases safely
+  const params = await props.params;
   const article = ARTICLES.find(a => a.id === params.id);
   if (!article) return { title: 'Not Found' };
   
@@ -17,7 +24,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-export default function ArticleDetailPage({ params }: { params: { id: string } }) {
+export default async function ArticleDetailPage(props: Props) {
+  const params = await props.params;
   const article = ARTICLES.find(a => a.id === params.id);
 
   if (!article) {
@@ -25,7 +33,6 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
   }
   
   // Logic: Only use the manually configured link for CNFans.
-  // If user didn't paste a CNFans link in `agentLinks`, the button is disabled.
   const cnfansLink = article.agentLinks?.['CNfans'];
 
   return (
@@ -220,19 +227,12 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
                         />
                     </div>
                     
-                    {/* Copy Link Helper - Only shows if rawLink is present */}
+                    {/* Copy Link Helper - Visual Only */}
                     {article.rawLink && (
-                        <div className="group cursor-pointer bg-kf-black text-white p-3 rounded-lg border-2 border-black shadow-sm flex items-center justify-between hover:bg-kf-yellow hover:text-black transition-colors"
-                             title={article.rawLink} // Simple tooltip
-                             onClick={() => {
-                                 // Basic copy functionality
-                                 navigator.clipboard.writeText(article.rawLink || '');
-                                 alert('Raw link copied to clipboard!');
-                             }}
-                        >
+                        <div className="bg-kf-black text-white p-3 rounded-lg border-2 border-black shadow-sm flex items-center justify-between" title={article.rawLink}>
                             <div className="flex items-center gap-2">
-                                <span className="font-bold text-xs uppercase">Copy Raw Link</span>
-                                <span className="text-[10px] opacity-60">(Taobao/Weidian)</span>
+                                <span className="font-bold text-xs uppercase">Raw Link Available</span>
+                                <span className="text-[10px] opacity-60">(See Agent)</span>
                             </div>
                             <Copy className="w-4 h-4" />
                         </div>
