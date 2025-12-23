@@ -34,7 +34,7 @@ export default function TheLabClient() {
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-none mb-6 tracking-tighter">
-                CNfans Reviews: <br/>
+                CNfans Reviews: <br className="hidden md:block" />
                 <span className="text-kf-red decoration-4 underline underline-offset-8">Quality Lab</span>
             </h1>
             

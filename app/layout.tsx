@@ -9,8 +9,8 @@ import SocialFloater from "@/components/SocialFloater";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kindredflip - Discover Your Vibe",
-  description: "A vibrant, curated discovery platform for trendy items, designed for Gen Z with a pop-art aesthetic.",
+  title: "The Ultimate CNfans Spreadsheet 2026 | QC Verified Links & Finds",
+  description: "Stop gambling with dead links. Access the #1 CNfans Spreadsheet for 2026. We list 1000+ QC-verified finds for Sneakers, Tech, and Hoodies. Shop the Gold Standard safely.",
 };
 
 export default function RootLayout({

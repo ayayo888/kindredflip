@@ -124,7 +124,7 @@ export default function HowToClient() {
             </div>
             
             <h1 className="text-5xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none">
-                HOW TO ORDER FROM CHINA: <br/>
+                HOW TO ORDER FROM CHINA: <br className="hidden md:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#EC4899]">
                     THE MANUAL
                 </span>
