@@ -156,7 +156,12 @@ export default function TheLabClient() {
       <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 gap-y-12">
               {filteredItems.map(item => (
-                  <div key={item.id} className="relative mt-6 group">
+                  // WRAP THE WHOLE CARD IN A LINK TO THE DETAIL PAGE
+                  <Link 
+                    href={`/thelab/${item.id}`} 
+                    key={item.id} 
+                    className="relative mt-6 group block hover:-translate-y-1 transition-transform duration-200 cursor-pointer"
+                  >
                       
                       {/* Folder Tab */}
                       <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-4 border-b-0 border-black font-mono text-xs font-bold uppercase z-10">
@@ -180,7 +185,9 @@ export default function TheLabClient() {
 
                           {/* Data */}
                           <div className="flex-grow">
-                              <h3 className="font-black text-xl leading-tight mb-3 uppercase">{item.title}</h3>
+                              <h3 className="font-black text-xl leading-tight mb-3 uppercase group-hover:text-kf-blue transition-colors">
+                                {item.title}
+                              </h3>
                               <div className="font-mono text-sm text-gray-600 space-y-1 border-t-2 border-dashed border-gray-300 pt-3 mb-4">
                                   <div className="flex justify-between">
                                       <span>PRICE:</span>
@@ -196,12 +203,12 @@ export default function TheLabClient() {
                               </p>
                           </div>
 
-                          {/* Action */}
-                          <button className="w-full bg-black text-white font-mono py-3 font-bold uppercase hover:bg-kf-yellow hover:text-black border-2 border-transparent hover:border-black transition-colors">
+                          {/* Action Button Visual */}
+                          <div className="w-full bg-black text-white font-mono py-3 font-bold uppercase group-hover:bg-kf-yellow group-hover:text-black border-2 border-transparent group-hover:border-black transition-colors text-center">
                               [ Read Report ]
-                          </button>
+                          </div>
                       </div>
-                  </div>
+                  </Link>
               ))}
           </div>
 

@@ -400,3 +400,15 @@ export const ARTICLES: ArticleItem[] = [
 ];
 
 export const GOLD_ITEMS = ARTICLES.filter(item => item.isFeatured);
+
+// =====================================================================
+// 6. GLOBAL SITE CONFIG (Icon & Metadata)
+// =====================================================================
+export const SITE_CONFIG = {
+  // 请将此链接替换为您上传到 Cloudinary 的图标 URL (建议 512x512 PNG)
+  // 这个图标将用于：
+  // 1. 浏览器标签页 (Favicon)
+  // 2. 网站导航栏左上角的 Logo
+  // 3. 手机添加到主屏幕的图标
+  icon: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/shoes_ocm0vz.png', // 示例图片，请替换
+};

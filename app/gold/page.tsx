@@ -25,8 +25,8 @@ const GoldListPage: React.FC = () => {
       {/* Header Section */}
       <div className="relative bg-kf-offwhite py-16 px-4 border-b-4 border-black overflow-hidden">
         {/* Background Decorative Elements */}
-        <div className="absolute top-[-20%] right-[-5%] w-64 h-64 bg-kf-yellow rounded-full border-4 border-black opacity-50 blur-sm animate-pulse"></div>
-        <div className="absolute bottom-[-10%] left-[-5%] w-40 h-40 bg-kf-blue rotate-45 border-4 border-black opacity-40"></div>
+        <div className="absolute top-[-20%] right-[-5%] w-64 h-64 bg-kf-yellow rounded-full border-4 border-black opacity-50 blur-sm animate-pulse z-0"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-40 h-40 bg-kf-blue rotate-45 border-4 border-black opacity-40 z-0"></div>
         
         <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left">
           <div className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg font-bold mb-4 transform -rotate-2">
@@ -43,7 +43,7 @@ const GoldListPage: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 mt-12">
+      <div className="max-w-7xl mx-auto px-4 mt-12 relative z-10">
         
         {/* Filters (Visual Only for now) */}
         <div className="flex flex-wrap gap-3 mb-10">
@@ -63,7 +63,7 @@ const GoldListPage: React.FC = () => {
             <Link 
               key={article.id} 
               href={`/gold/${article.id}`}
-              className="group relative flex flex-col h-full bg-white border-2 border-black rounded-2xl overflow-hidden shadow-hard transition-all duration-300 hover:shadow-none hover:translate-x-1 hover:translate-y-1 block"
+              className="group relative flex flex-col h-full bg-white border-2 border-black rounded-2xl overflow-hidden shadow-hard transition-all duration-300 hover:shadow-none hover:translate-x-1 hover:translate-y-1 block z-10"
             >
               {/* Image Header */}
               <div className="relative h-64 overflow-hidden border-b-2 border-black bg-gray-100">

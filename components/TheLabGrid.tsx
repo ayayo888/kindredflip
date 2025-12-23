@@ -30,7 +30,11 @@ const TheLabGrid: React.FC<TheLabGridProps> = ({ items }) => {
       {/* Grid Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gap-y-10">
         {displayItems.map((item) => (
-            <div key={item.id} className="relative mt-6 group cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+            <Link 
+              key={item.id} 
+              href={`/thelab/${item.id}`}
+              className="relative mt-6 group cursor-pointer hover:-translate-y-1 transition-transform duration-200 block"
+            >
                       
                 {/* Folder Tab */}
                 <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-[3px] border-b-0 border-black font-mono text-xs font-bold uppercase z-10">
@@ -54,7 +58,9 @@ const TheLabGrid: React.FC<TheLabGridProps> = ({ items }) => {
 
                     {/* Data */}
                     <div className="flex-grow">
-                        <h3 className="font-black text-lg leading-tight mb-3 uppercase line-clamp-2">{item.title}</h3>
+                        <h3 className="font-black text-lg leading-tight mb-3 uppercase line-clamp-2 group-hover:text-kf-blue transition-colors">
+                          {item.title}
+                        </h3>
                         <div className="font-mono text-xs md:text-sm text-gray-600 space-y-1 border-t-2 border-dashed border-gray-300 pt-3 mb-4">
                             <div className="flex justify-between">
                                 <span>PRICE:</span>
@@ -71,11 +77,11 @@ const TheLabGrid: React.FC<TheLabGridProps> = ({ items }) => {
                     </div>
 
                     {/* Action */}
-                    <Link href="/thelab" className="w-full text-center bg-black text-white font-mono py-2 font-bold uppercase hover:bg-kf-yellow hover:text-black border-2 border-transparent hover:border-black transition-colors block text-sm">
+                    <div className="w-full text-center bg-black text-white font-mono py-2 font-bold uppercase group-hover:bg-kf-yellow group-hover:text-black border-2 border-transparent group-hover:border-black transition-colors block text-sm">
                         [ Read Report ]
-                    </Link>
+                    </div>
                 </div>
-            </div>
+            </Link>
         ))}
       </div>
     </div>
