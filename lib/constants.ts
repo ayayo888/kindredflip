@@ -1,12 +1,9 @@
 import { CategoryItem, QCItem, ArticleItem, LabItem } from './types';
 
 // =====================================================================
-// 🟢 图片替换区域 (IMAGE REPLACEMENT ZONE)
+// 1. 首页分类 (CATEGORY GRID)
+// Order: Shoes, Hoodies, T-Shirts, Jackets, Jersey, Pants, Accessories, Bags, Tech, Lifestyle, Girls, Perfume
 // =====================================================================
-// 请将下方的 "在此处粘贴..." 替换为你 Cloudinary 的真实图片链接。
-// =====================================================================
-
-// 1. 首页分类 (CATEGORY GRID) - 按你的要求排序
 export const CATEGORIES: CategoryItem[] = [
   { 
     id: '1', 
@@ -25,14 +22,14 @@ export const CATEGORIES: CategoryItem[] = [
   { 
     id: '3', 
     name: 'T-Shirts', 
-    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488589/t_jg2rrt.png', // 🔴 需要替换
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488589/t_jg2rrt.png',
     color: 'yellow', 
     itemCount: 920 
   },
   { 
     id: '4', 
     name: 'Jackets', 
-    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/jacket_lmg2kr.png', // 🔴 需要替换
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/jacket_lmg2kr.png',
     color: 'green', 
     itemCount: 450 
   },
@@ -81,7 +78,7 @@ export const CATEGORIES: CategoryItem[] = [
   { 
     id: '11', 
     name: 'Girls', 
-    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/girls_g4h2li.png', // 🔴 需要替换
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/girls_g4h2li.png',
     color: 'red', 
     itemCount: 280 
   },
@@ -94,7 +91,7 @@ export const CATEGORIES: CategoryItem[] = [
   },
 ];
 
-// 2. 首页 QC 指南 (QC GUIDE)
+// 2. QC ITEMS
 export const QC_ITEMS: QCItem[] = [
   {
     id: 'qc1',
@@ -118,7 +115,7 @@ export const QC_ITEMS: QCItem[] = [
   }
 ];
 
-// 3. 实验室评测 (THE LAB)
+// 3. LAB ITEMS
 export const LAB_ITEMS: LabItem[] = [
   {
     id: 'l1',
@@ -182,7 +179,7 @@ export const LAB_ITEMS: LabItem[] = [
   },
 ];
 
-// 4. 文章详情与首页推荐 (ARTICLES & GOLD ITEMS)
+// 4. ARTICLES
 export const ARTICLES: ArticleItem[] = [
   {
     id: 'a1',
