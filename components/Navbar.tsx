@@ -43,13 +43,13 @@ const Navbar: React.FC = () => {
         {/* Center: Navigation Links (Desktop) */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {NAV_LINKS.map((link) => {
-             // Safe Pathname Check
-             // Explicitly handle null case to satisfy TypeScript strict mode
-             const safePathname = pathname || '';
+             // FIX: Use currentPath and nullish coalescing to guarantee a string
+             // We renamed the variable to 'currentPath' to force a code change detection
+             const currentPath = pathname ?? '';
              
              const isActive = link.path === '/' 
-                ? safePathname === '/' 
-                : safePathname.startsWith(link.path);
+                ? currentPath === '/' 
+                : currentPath.startsWith(link.path);
 
              return (
                 <Link 
