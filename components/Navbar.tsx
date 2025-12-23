@@ -41,10 +41,11 @@ const Navbar: React.FC = () => {
         {/* Center: Navigation Links (Desktop) */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {NAV_LINKS.map((link) => {
-             // Active state check
+             // Active state check - Fix: Ensure pathname is not null
+             const currentPath = pathname || '';
              const isActive = link.path === '/' 
-                ? pathname === '/' 
-                : pathname.startsWith(link.path);
+                ? currentPath === '/' 
+                : currentPath.startsWith(link.path);
 
              return (
                 <Link 
