@@ -6,8 +6,12 @@ import { Star, Calendar, User, ArrowUpRight, Flame } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const INITIAL_ITEMS_COUNT = 9; // 初始显示文章数量
+const LOAD_MORE_STEP = 6;      // 点击加载更多时增加的数量
+
 export default function GoldListClient() {
   const [activeTag, setActiveTag] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
 
   // 1. 动态提取标签 (Auto-update Tags)
   // 遍历所有文章，收集 unique tags，并自动排序
@@ -31,6 +35,19 @@ export default function GoldListClient() {
     if (activeTag === 'All') return ARTICLES;
     return ARTICLES.filter(article => article.tags && article.tags.includes(activeTag));
   }, [activeTag]);
+
+  // 3. 分页逻辑：只显示可见数量的文章
+  const displayedArticles = filteredArticles.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredArticles.length;
+
+  const handleTagChange = (tag: string) => {
+    setActiveTag(tag);
+    setVisibleCount(INITIAL_ITEMS_COUNT); // 切换标签时重置显示数量，防止停留在列表底部
+  };
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + LOAD_MORE_STEP);
+  };
 
   // 标签颜色辅助函数
   const getTagColor = (tag: string) => {
@@ -71,7 +88,7 @@ export default function GoldListClient() {
            {allTags.map((tag) => (
              <button 
                 key={tag}
-                onClick={() => setActiveTag(tag)}
+                onClick={() => handleTagChange(tag)}
                 className={`px-6 py-2 rounded-full border-2 border-black font-black text-sm uppercase shadow-hard-sm transition-all hover:-translate-y-1 hover:shadow-hard 
                     ${activeTag === tag ? 'bg-kf-black text-white' : 'bg-white text-black hover:bg-kf-yellow'}`}
              >
@@ -82,7 +99,7 @@ export default function GoldListClient() {
 
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-20">
-          {filteredArticles.map((article) => (
+          {displayedArticles.map((article) => (
             <Link 
               key={article.id} 
               href={`/gold/${article.id}`}
@@ -157,7 +174,7 @@ export default function GoldListClient() {
             <div className="py-20 text-center border-4 border-dashed border-gray-300 rounded-3xl">
                 <p className="text-2xl font-bold text-gray-400">No Gold items found in "{activeTag}".</p>
                 <button 
-                    onClick={() => setActiveTag('All')}
+                    onClick={() => handleTagChange('All')}
                     className="mt-4 text-kf-blue font-black underline hover:text-black"
                 >
                     Reset Filter
@@ -165,11 +182,14 @@ export default function GoldListClient() {
             </div>
         )}
 
-        {/* Load More Button (Placeholder) */}
-        {filteredArticles.length > 0 && (
+        {/* Load More Button */}
+        {hasMore && (
             <div className="mt-16 text-center relative z-20">
-                <button className="bg-white text-black px-12 py-4 rounded-xl border-2 border-black font-black text-xl shadow-hard hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] active:bg-kf-offwhite transition-all">
-                    Load More Content
+                <button 
+                  onClick={handleLoadMore}
+                  className="bg-white text-black px-12 py-4 rounded-xl border-2 border-black font-black text-xl shadow-hard hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] active:bg-kf-offwhite transition-all"
+                >
+                    Load More Content ({filteredArticles.length - visibleCount} remaining)
                 </button>
             </div>
         )}

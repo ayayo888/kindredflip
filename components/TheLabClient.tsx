@@ -5,9 +5,13 @@ import Link from 'next/link';
 import { TestTube, XCircle, CheckCircle, AlertTriangle, ArrowRight } from 'lucide-react';
 import { LAB_ITEMS } from '@/lib/constants';
 
+const INITIAL_ITEMS_COUNT = 8; // 初始显示数量 (4列布局 x 2行)
+const LOAD_MORE_STEP = 8;      // 每次加载增加的数量
+
 export default function TheLabClient() {
   const [activeCategory, setActiveCategory] = useState('ALL');
   const [filterStatus, setFilterStatus] = useState<'ALL' | 'PASS' | 'FAIL'>('ALL');
+  const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
 
   // 1. 动态提取分类 (Dynamic Category Extraction)
   // 自动遍历 LAB_ITEMS 里的 category 字段，去重并排序
@@ -35,6 +39,25 @@ export default function TheLabClient() {
         return catMatch && statusMatch;
     });
   }, [activeCategory, filterStatus]);
+
+  // 3. 分页逻辑
+  const displayedItems = filteredItems.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredItems.length;
+
+  // 处理筛选变更 (重置分页)
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setVisibleCount(INITIAL_ITEMS_COUNT);
+  };
+
+  const handleStatusChange = (status: 'ALL' | 'PASS' | 'FAIL') => {
+    setFilterStatus(status);
+    setVisibleCount(INITIAL_ITEMS_COUNT);
+  };
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + LOAD_MORE_STEP);
+  };
 
   return (
     <div className="bg-kf-offwhite min-h-screen pb-24 md:pb-10 font-sans">
@@ -129,19 +152,19 @@ export default function TheLabClient() {
                 {/* Primary Filters (Pass/Fail) */}
                 <div className="flex shrink-0 border-b-4 md:border-b-0 md:border-r-4 border-black">
                     <button 
-                        onClick={() => setFilterStatus('ALL')}
+                        onClick={() => handleStatusChange('ALL')}
                         className={`flex-1 md:flex-none px-6 py-4 font-black uppercase text-sm hover:bg-black hover:text-white transition-colors border-r-2 border-black md:border-r-0 ${filterStatus === 'ALL' ? 'bg-black text-white' : ''}`}
                     >
                         All
                     </button>
                     <button 
-                        onClick={() => setFilterStatus('PASS')}
+                        onClick={() => handleStatusChange('PASS')}
                         className={`flex-1 md:flex-none px-6 py-4 font-black uppercase text-sm hover:bg-kf-green hover:text-black transition-colors border-r-2 border-black md:border-r-0 ${filterStatus === 'PASS' ? 'bg-kf-green' : ''}`}
                     >
                         <CheckCircle className="inline w-4 h-4 mr-1" /> Pass
                     </button>
                     <button 
-                        onClick={() => setFilterStatus('FAIL')}
+                        onClick={() => handleStatusChange('FAIL')}
                         className={`flex-1 md:flex-none px-6 py-4 font-black uppercase text-sm hover:bg-kf-red hover:text-white transition-colors ${filterStatus === 'FAIL' ? 'bg-kf-red text-white' : ''}`}
                     >
                         <XCircle className="inline w-4 h-4 mr-1" /> Fail
@@ -153,7 +176,7 @@ export default function TheLabClient() {
                     {allCategories.map(cat => (
                         <button
                             key={cat}
-                            onClick={() => setActiveCategory(cat)}
+                            onClick={() => handleCategoryChange(cat)}
                             className={`
                                 mx-1 md:mx-0 md:px-6 md:py-4 px-4 py-2 rounded-full md:rounded-none border-2 border-black md:border-0 md:border-r-2 md:border-b-0
                                 font-mono font-bold text-xs md:text-sm uppercase transition-all
@@ -174,7 +197,7 @@ export default function TheLabClient() {
       {/* 4. SECTION: THE REVIEW GRID */}
       <div className="max-w-7xl mx-auto px-4 py-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 gap-y-12">
-              {filteredItems.map(item => (
+              {displayedItems.map(item => (
                   // WRAP THE WHOLE CARD IN A LINK TO THE DETAIL PAGE
                   <Link 
                     href={`/thelab/${item.id}`} 
@@ -237,13 +260,30 @@ export default function TheLabClient() {
                   <AlertTriangle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                   <p className="font-mono text-gray-400 text-xl">NO RECORDS FOUND IN ARCHIVE.</p>
                   <button 
-                    onClick={() => { setActiveCategory('ALL'); setFilterStatus('ALL'); }}
+                    onClick={() => { 
+                        setActiveCategory('ALL'); 
+                        setFilterStatus('ALL'); 
+                        setVisibleCount(INITIAL_ITEMS_COUNT);
+                    }}
                     className="mt-4 text-kf-blue font-bold underline"
                   >
                     Reset Filters
                   </button>
               </div>
           )}
+
+          {/* Load More Button */}
+          {hasMore && (
+              <div className="mt-16 text-center relative z-20">
+                  <button 
+                    onClick={handleLoadMore}
+                    className="bg-white text-black px-12 py-4 rounded-xl border-2 border-black font-black text-xl shadow-hard hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] active:bg-kf-offwhite transition-all"
+                  >
+                      Load More Reports ({filteredItems.length - visibleCount} remaining)
+                  </button>
+              </div>
+          )}
+
       </div>
 
       {/* 5. SECTION: STICKY CTA (Mobile Bottom Bar) */}
