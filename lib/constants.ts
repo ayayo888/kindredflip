@@ -1,28 +1,97 @@
 import { CategoryItem, QCItem, ArticleItem, LabItem } from './types';
 
 // =====================================================================
-// CLOUDINARY 图片替换指南
+// 🟢 图片替换区域 (IMAGE REPLACEMENT ZONE)
 // =====================================================================
-// 1. 在 Cloudinary 后台上传图片。
-// 2. 复制图片链接 (URL)。
-// 3. 将链接粘贴到下方对应的 'image' 字段中。
-// 4. 推荐在链接中加入 f_auto,q_auto 以自动优化速度。
+// 请将下方的 "在此处粘贴..." 替换为你 Cloudinary 的真实图片链接。
 // =====================================================================
 
-// 1. 首页分类 (CATEGORY GRID)
+// 1. 首页分类 (CATEGORY GRID) - 按你的要求排序
 export const CATEGORIES: CategoryItem[] = [
-  { id: '1', name: 'Shoes', image: 'https://picsum.photos/400/400?random=1', color: 'blue', itemCount: 1240 },
-  { id: '2', name: 'Hoodies', image: 'https://picsum.photos/400/400?random=2', color: 'red', itemCount: 850 },
-  { id: '3', name: 'Tech', image: 'https://picsum.photos/400/400?random=3', color: 'yellow', itemCount: 320 },
-  { id: '4', name: 'Pants', image: 'https://picsum.photos/400/400?random=4', color: 'green', itemCount: 540 },
-  { id: '5', name: 'Jerseys', image: 'https://picsum.photos/400/400?random=5', color: 'blue', itemCount: 210 },
-  { id: '6', name: 'Accessories', image: 'https://picsum.photos/400/400?random=6', color: 'yellow', itemCount: 1100 },
-  { id: '7', name: 'Bags', image: 'https://picsum.photos/400/400?random=7', color: 'red', itemCount: 430 },
-  { id: '8', name: 'Headwear', image: 'https://picsum.photos/400/400?random=8', color: 'green', itemCount: 300 },
-  { id: '9', name: 'Decor', image: 'https://picsum.photos/400/400?random=9', color: 'blue', itemCount: 150 },
-  { id: '10', name: 'Stationery', image: 'https://picsum.photos/400/400?random=10', color: 'red', itemCount: 670 },
-  { id: '11', name: 'Collectibles', image: 'https://picsum.photos/400/400?random=11', color: 'yellow', itemCount: 80 },
-  { id: '12', name: 'Other Stuff', image: 'https://picsum.photos/400/400?random=12', color: 'green', itemCount: 999 },
+  { 
+    id: '1', 
+    name: 'Shoes', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/shoes_ocm0vz.png', 
+    color: 'blue', 
+    itemCount: 1240 
+  },
+  { 
+    id: '2', 
+    name: 'Hoodies', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/Hoodies_fpspfa.png', 
+    color: 'red', 
+    itemCount: 850 
+  },
+  { 
+    id: '3', 
+    name: 'T-Shirts', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488589/t_jg2rrt.png', // 🔴 需要替换
+    color: 'yellow', 
+    itemCount: 920 
+  },
+  { 
+    id: '4', 
+    name: 'Jackets', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/jacket_lmg2kr.png', // 🔴 需要替换
+    color: 'green', 
+    itemCount: 450 
+  },
+  { 
+    id: '5', 
+    name: 'Jersey', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/Jersey_lmh6ob.png', 
+    color: 'blue', 
+    itemCount: 210 
+  },
+  { 
+    id: '6', 
+    name: 'Pants', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488589/pants_dnkfqu.png', 
+    color: 'yellow', 
+    itemCount: 540 
+  },
+  { 
+    id: '7', 
+    name: 'Accessories', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/Accessories_n1sciy.png', 
+    color: 'red', 
+    itemCount: 1100 
+  },
+  { 
+    id: '8', 
+    name: 'Bags', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/bags_vjalt6.png', 
+    color: 'green', 
+    itemCount: 430 
+  },
+  { 
+    id: '9', 
+    name: 'Tech', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/tech_dh5t1u.png', 
+    color: 'blue', 
+    itemCount: 320 
+  },
+  { 
+    id: '10', 
+    name: 'Lifestyle', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/Lifestyle_euf6oo.png', 
+    color: 'yellow', 
+    itemCount: 150 
+  },
+  { 
+    id: '11', 
+    name: 'Girls', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488587/girls_g4h2li.png', // 🔴 需要替换
+    color: 'red', 
+    itemCount: 280 
+  },
+  { 
+    id: '12', 
+    name: 'Perfume', 
+    image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766488588/Perfume_ugwatb.png', 
+    color: 'green', 
+    itemCount: 80 
+  },
 ];
 
 // 2. 首页 QC 指南 (QC GUIDE)
@@ -114,12 +183,6 @@ export const LAB_ITEMS: LabItem[] = [
 ];
 
 // 4. 文章详情与首页推荐 (ARTICLES & GOLD ITEMS)
-// ---------------------------------------------------------------------
-// 使用说明:
-// 1. 如果你想在首页显示这篇文章，设置 isFeatured: true
-// 2. 首页会自动读取这里的数据。
-// 3. 点击首页卡片会自动跳转到 /gold/{id} 详情页。
-// ---------------------------------------------------------------------
 export const ARTICLES: ArticleItem[] = [
   {
     id: 'a1',
@@ -130,7 +193,7 @@ export const ARTICLES: ArticleItem[] = [
     author: 'RepMaster_J',
     tags: ['Tech', 'Accessories', 'Review'],
     rating: 5,
-    isFeatured: true, // ✅ 这会在首页显示
+    isFeatured: true, 
     isSale: true,
     content: [
       "This phone mount has completely changed my driving setup. The magnet strength is incredible—even over speed bumps, my iPhone 15 Pro Max doesn't budge.",
@@ -147,7 +210,7 @@ export const ARTICLES: ArticleItem[] = [
     author: 'TechWearAddict',
     tags: ['Tech', 'Review'],
     rating: 4,
-    isFeatured: true, // ✅ 这会在首页显示
+    isFeatured: true, 
     isSale: true,
   },
   {
@@ -159,7 +222,7 @@ export const ARTICLES: ArticleItem[] = [
     author: 'HaulGod',
     tags: ['Tech', 'Wearable'],
     rating: 5,
-    isFeatured: true, // ✅ 这会在首页显示
+    isFeatured: true, 
     isSale: false,
   },
   {
@@ -171,7 +234,7 @@ export const ARTICLES: ArticleItem[] = [
     author: 'CarMods',
     tags: ['Car', 'Tech'],
     rating: 4,
-    isFeatured: true, // ✅ 这会在首页显示
+    isFeatured: true,
     isSale: true,
   },
   {
@@ -183,7 +246,7 @@ export const ARTICLES: ArticleItem[] = [
     author: 'SneakerHead99',
     tags: ['Shoes', 'Review'],
     rating: 5,
-    isFeatured: false, // ❌ 这不会在首页 Gold 区域显示，但会在 /gold 列表页显示
+    isFeatured: false,
     content: ["Full review content here..."]
   },
    {
@@ -199,6 +262,4 @@ export const ARTICLES: ArticleItem[] = [
   }
 ];
 
-// 自动生成首页 Gold Items 列表
-// 不需要手动维护这个数组了！
 export const GOLD_ITEMS = ARTICLES.filter(item => item.isFeatured);
