@@ -1,3 +1,4 @@
+
 export interface CategoryItem {
   id: string;
   name: string;
@@ -12,11 +13,7 @@ export interface NavLink {
   href: string;
 }
 
-export interface QCItem {
-  id: string;
-  title: string;
-  image: string;
-}
+// QCItem removed (merged into LabItem)
 
 export interface LabItem {
   id: string;
@@ -61,6 +58,11 @@ export interface ArticleItem {
   isFeatured?: boolean; 
   isSale?: boolean;
   
+  // --- SEO Overrides (Manual Control) ---
+  seoTitle?: string;       // Custom Meta Title
+  seoDescription?: string; // Custom Meta Description
+  seoKeywords?: string[];  // Custom Keywords
+
   // --- PURCHASING CONFIGURATION ---
   // 1. Raw Link: 仅用于显示 "Copy Raw Link" 按钮 (淘宝/微店原链接)
   rawLink?: string; 

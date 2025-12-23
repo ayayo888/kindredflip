@@ -1,5 +1,6 @@
 import React from 'react';
 import { Truck, CheckCircle, Calculator, Search } from 'lucide-react';
+import Link from 'next/link';
 
 const steps = [
   {
@@ -59,9 +60,12 @@ const GuideSection: React.FC = () => {
           <p className="font-bold text-gray-500 mb-4 text-sm md:text-base">
             First time using an agent? Don't worry, we have a complete walkthrough.
           </p>
-          <button className="bg-kf-black text-white px-10 py-4 rounded-xl border-2 border-black font-black text-lg shadow-hard hover:bg-kf-yellow hover:text-black hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+          <Link 
+            href="/howto"
+            className="bg-kf-black text-white px-10 py-4 rounded-xl border-2 border-black font-black text-lg shadow-hard hover:bg-kf-yellow hover:text-black hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all inline-block"
+          >
             [ Master the Full Process ]
-          </button>
+          </Link>
         </div>
 
         {/* Informational Callout mimicking the reference site text area but styled */}

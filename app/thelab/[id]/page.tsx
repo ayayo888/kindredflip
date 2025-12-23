@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import AgentSelector from '@/components/AgentSelector';
+import MarkdownRenderer from '@/components/MarkdownRenderer';
 
 type Props = {
   params: Promise<{ id: string }> | { id: string };
@@ -165,11 +166,10 @@ export default async function LabDetailPage(props: Props) {
                     <span className="w-full h-1 bg-black"></span>
                 </h3>
 
-                <div className="prose prose-lg prose-headings:font-black prose-p:text-gray-800 prose-p:leading-loose mb-12 font-medium">
+                {/* Markdown Content */}
+                <div className="mb-12">
                    {item.content ? (
-                       item.content.map((paragraph, idx) => (
-                           <p key={idx} className="mb-6">{paragraph}</p>
-                       ))
+                       <MarkdownRenderer content={item.content} />
                    ) : (
                        <div className="p-6 bg-white border-2 border-dashed border-gray-300 rounded-xl text-center">
                            <p className="text-gray-500 italic">No detailed analysis text provided.</p>

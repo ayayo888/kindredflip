@@ -1,4 +1,4 @@
-import { CategoryItem, QCItem, ArticleItem, LabItem, AgentLinkConfig } from './types';
+import { CategoryItem, ArticleItem, LabItem, AgentLinkConfig } from './types';
 
 // =====================================================================
 // 0. SOCIAL MEDIA LINKS
@@ -151,31 +151,7 @@ export const CATEGORIES: CategoryItem[] = [
   },
 ];
 
-// 3. QC ITEMS
-export const QC_ITEMS: QCItem[] = [
-  {
-    id: 'qc1',
-    title: 'Air Jordan 4 Black Cat - Retail vs Rep Comparison Guide (2025 Updated)',
-    image: 'https://picsum.photos/500/500?random=30',
-  },
-  {
-    id: 'qc2',
-    title: 'How to Spot Fake Essentials Hoodies: Stitching & Label Check',
-    image: 'https://picsum.photos/500/500?random=31',
-  },
-  {
-    id: 'qc3',
-    title: 'Balenciaga Track LED - Battery Compartment Safety Inspection',
-    image: 'https://picsum.photos/500/500?random=32',
-  },
-  {
-    id: 'qc4',
-    title: 'North Face Nuptse 700 - Correct Puffiness & Hologram Tag Guide',
-    image: 'https://picsum.photos/500/500?random=33',
-  }
-];
-
-// 4. LAB ITEMS
+// 3. LAB ITEMS (原 QC ITEMS 已被合并至此)
 export const LAB_ITEMS: LabItem[] = [
   {
     id: 'l1',
@@ -287,7 +263,7 @@ export const LAB_ITEMS: LabItem[] = [
   },
 ];
 
-// 5. ARTICLES (Gold Items)
+// 4. ARTICLES (Gold Items)
 export const ARTICLES: ArticleItem[] = [
   {
     id: 'a1',
@@ -402,7 +378,7 @@ export const ARTICLES: ArticleItem[] = [
 export const GOLD_ITEMS = ARTICLES.filter(item => item.isFeatured);
 
 // =====================================================================
-// 6. GLOBAL SITE CONFIG (Icon & Metadata)
+// 5. GLOBAL SITE CONFIG (Icon & Metadata)
 // =====================================================================
 export const SITE_CONFIG = {
   // 请将此链接替换为您上传到 Cloudinary 的图标 URL (建议 512x512 PNG)

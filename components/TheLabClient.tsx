@@ -1,21 +1,40 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { TestTube, XCircle, CheckCircle, AlertTriangle, ArrowRight } from 'lucide-react';
 import { LAB_ITEMS } from '@/lib/constants';
-
-const CATEGORIES = ['ALL', 'SHOES', 'HOODIES', 'TECH', 'BAGS', 'ACCESSORIES'];
 
 export default function TheLabClient() {
   const [activeCategory, setActiveCategory] = useState('ALL');
   const [filterStatus, setFilterStatus] = useState<'ALL' | 'PASS' | 'FAIL'>('ALL');
 
-  const filteredItems = LAB_ITEMS.filter(item => {
-    const catMatch = activeCategory === 'ALL' || item.category === activeCategory;
-    const statusMatch = filterStatus === 'ALL' || item.status === filterStatus;
-    return catMatch && statusMatch;
-  });
+  // 1. 动态提取分类 (Dynamic Category Extraction)
+  // 自动遍历 LAB_ITEMS 里的 category 字段，去重并排序
+  const allCategories = useMemo(() => {
+    const cats = new Set<string>(['ALL']);
+    LAB_ITEMS.forEach(item => {
+      if (item.category) {
+        cats.add(item.category.toUpperCase());
+      }
+    });
+    // 排序：保证 ALL 在第一个，其他按字母顺序
+    return Array.from(cats).sort((a, b) => {
+        if (a === 'ALL') return -1;
+        if (b === 'ALL') return 1;
+        return a.localeCompare(b);
+    });
+  }, []);
+
+  // 2. 筛选逻辑 (Filters)
+  const filteredItems = useMemo(() => {
+    return LAB_ITEMS.filter(item => {
+        const itemCat = item.category ? item.category.toUpperCase() : '';
+        const catMatch = activeCategory === 'ALL' || itemCat === activeCategory;
+        const statusMatch = filterStatus === 'ALL' || item.status === filterStatus;
+        return catMatch && statusMatch;
+    });
+  }, [activeCategory, filterStatus]);
 
   return (
     <div className="bg-kf-offwhite min-h-screen pb-24 md:pb-10 font-sans">
@@ -129,9 +148,9 @@ export default function TheLabClient() {
                     </button>
                 </div>
 
-                {/* Category Filters */}
+                {/* Category Filters (Dynamic) */}
                 <div className="flex-1 overflow-x-auto whitespace-nowrap scrollbar-hide p-2 md:p-0 flex items-center md:flex-wrap bg-gray-50 md:bg-white">
-                    {CATEGORIES.map(cat => (
+                    {allCategories.map(cat => (
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
@@ -217,6 +236,12 @@ export default function TheLabClient() {
               <div className="py-20 text-center border-4 border-dashed border-gray-300 rounded-3xl mt-8">
                   <AlertTriangle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                   <p className="font-mono text-gray-400 text-xl">NO RECORDS FOUND IN ARCHIVE.</p>
+                  <button 
+                    onClick={() => { setActiveCategory('ALL'); setFilterStatus('ALL'); }}
+                    className="mt-4 text-kf-blue font-bold underline"
+                  >
+                    Reset Filters
+                  </button>
               </div>
           )}
       </div>

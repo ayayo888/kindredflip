@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import AgentSelector from '@/components/AgentSelector';
+import MarkdownRenderer from '@/components/MarkdownRenderer';
 
 // Flexible type definition for Next.js 14 (object) and 15 (Promise) compatibility
 type Props = {
@@ -19,8 +20,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   if (!article) return { title: 'Not Found' };
   
   return {
-    title: article.title,
-    description: article.excerpt,
+    title: article.seoTitle || article.title,
+    description: article.seoDescription || article.excerpt,
+    keywords: article.seoKeywords,
   };
 }
 
@@ -116,12 +118,10 @@ export default async function ArticleDetailPage(props: Props) {
             {/* Main Content Column */}
             <div className="flex-1">
                 
-                {/* Introduction / Content Body */}
-                <div className="prose prose-lg prose-headings:font-black prose-p:text-gray-800 prose-p:leading-loose mb-12">
+                {/* Markdown Content Body */}
+                <div className="mb-12">
                    {article.content ? (
-                       article.content.map((paragraph, idx) => (
-                           <p key={idx} className="mb-6 text-lg">{paragraph}</p>
-                       ))
+                       <MarkdownRenderer content={article.content} />
                    ) : (
                        <div className="p-8 bg-kf-offwhite border-2 border-dashed border-gray-300 rounded-xl text-center">
                            <p className="text-gray-500 italic">Full review content coming soon.</p>
