@@ -9,6 +9,24 @@ interface MarkdownRendererProps {
   content: string[];
 }
 
+// Helper to optimize Cloudinary URLs directly for standard <img> tags
+// This allows us to get optimized images (WebP/AVIF, resized) from Cloudinary
+// WITHOUT using Next.js <Image> (which requires width/height) and WITHOUT using Vercel Image Optimization (saving costs).
+const optimizeCloudinaryUrl = (src?: string) => {
+    if (!src || !src.includes('res.cloudinary.com')) return src;
+    
+    // Check if already optimized to avoid double params
+    if (src.includes('/upload/f_auto,q_auto/')) return src; 
+    
+    // Inject parameters after /upload/
+    if (src.includes('/upload/')) {
+        const [base, path] = src.split('/upload/');
+        // Params: f_auto (format), q_auto (quality), w_800 (limit width to max article size)
+        return `${base}/upload/f_auto,q_auto,w_800/${path}`; 
+    }
+    return src;
+};
+
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
   // Join the array of strings into a single markdown string with newlines
   const markdownString = content ? content.join('\n\n') : '';
@@ -22,7 +40,12 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
             // Custom styling for specific elements if needed
             img: ({node, ...props}) => (
                 <span className="block my-8">
-                    <img {...props} className="w-full h-auto rounded-xl border-2 border-black shadow-hard" />
+                    <img 
+                        {...props} 
+                        src={optimizeCloudinaryUrl(props.src as string)}
+                        className="w-full h-auto rounded-xl border-2 border-black shadow-hard" 
+                        loading="lazy"
+                    />
                 </span>
             ),
             blockquote: ({node, ...props}) => (

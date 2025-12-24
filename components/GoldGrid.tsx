@@ -2,6 +2,7 @@ import React from 'react';
 import { ArticleItem } from '../lib/types';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface GoldGridProps {
   items: ArticleItem[];
@@ -34,10 +35,12 @@ const GoldGrid: React.FC<GoldGridProps> = ({ items }) => {
           >
             {/* Image Container */}
             <div className="relative aspect-square overflow-hidden bg-gray-100 border-b-2 border-black">
-              <img 
+              <Image 
                 src={item.image} 
-                alt={item.title} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt={item.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               
               {/* Sale/Gold Badge */}

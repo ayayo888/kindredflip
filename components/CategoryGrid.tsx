@@ -2,6 +2,7 @@ import React from 'react';
 import { CategoryItem } from '@/lib/types';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CategoryGridProps {
   categories: CategoryItem[];
@@ -46,19 +47,21 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ categories }) => {
                 
                 {/* Image Area */}
                 <div className="relative aspect-square overflow-hidden bg-gray-100 border-b-2 border-black">
-                   <img 
+                   <Image 
                     src={cat.image} 
-                    alt={cat.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    alt={cat.name}
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                    />
                    {/* Floating Tag */}
-                   <div className={`absolute top-2 right-2 px-2 py-1 border-2 border-black rounded-md text-xs font-black text-white shadow-hard-sm ${getColorClass(cat.color)}`}>
+                   <div className={`absolute top-2 right-2 px-2 py-1 border-2 border-black rounded-md text-xs font-black text-white shadow-hard-sm z-10 ${getColorClass(cat.color)}`}>
                       {cat.itemCount}+
                    </div>
                 </div>
 
                 {/* Content Area */}
-                <div className="p-4 flex items-center justify-between bg-white relative">
+                <div className="p-4 flex items-center justify-between bg-white relative z-10">
                   <span className="font-bold text-lg leading-none">{cat.name}</span>
                   <div className={`w-8 h-8 rounded-full border-2 border-black flex items-center justify-center transition-colors ${getColorClass(cat.color)}`}>
                     <ArrowUpRight className="w-4 h-4 text-white" />

@@ -5,6 +5,7 @@ import { Menu, ChevronDown, Check, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { SITE_CONFIG } from '@/lib/constants';
+import Image from 'next/image';
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
@@ -38,7 +39,13 @@ const Navbar: React.FC = () => {
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer group shrink-0">
           <div className="relative w-10 h-10 rounded-lg border-2 border-black overflow-hidden shadow-hard-sm group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none transition-all bg-white">
-            <img src={SITE_CONFIG.icon} alt="Logo" className="w-full h-full object-cover" />
+            <Image 
+              src={SITE_CONFIG.icon} 
+              alt="Logo" 
+              fill
+              sizes="40px"
+              className="object-cover" 
+            />
           </div>
           <span className="hidden lg:block font-black text-2xl tracking-tighter text-black">Kindredflip</span>
         </Link>
