@@ -105,7 +105,40 @@
 
 ---
 
-## 🟢 第三部分：配置 Agent 详情页链接 (AGENT_LINKS)
+## 🟢 第三部分：配置首页分类卡片 (Category Grid)
+
+**对应位置**: 首页上方的方形卡片网格 (Shoes, Hoodies, Tech...)。
+
+### 配置流程
+1. 打开 `lib/constants.ts`。
+2. 找到 `export const CATEGORIES = [ ... ]` 数组。
+3. 直接修改数组里的对象。
+
+### 字段说明
+*   `name`: 卡片上显示的名称 (如 "Shoes")。
+*   `image`: 卡片里的图片链接。
+*   `itemCount`: 右上角显示的数字角标 (如 1240)。
+*   `href`: **点击卡片后的跳转链接**。
+    *   **跳转到站内筛选**: 填写 `/gold?category=shoes` (这将自动筛选 Gold 列表页)。
+    *   **跳转到外部表格**: 填写 `https://docs.google.com/...` (如果你希望点击直接去 Google Sheet)。
+
+### 代码示例
+```typescript
+{ 
+  id: '1', 
+  name: 'Shoes', 
+  image: 'https://...', 
+  color: 'blue', 
+  itemCount: 1240,
+  
+  // 修改这里来改变点击后的去向
+  href: '/gold?category=shoes'  
+},
+```
+
+---
+
+## 🟢 第四部分：配置 Agent 详情页链接 (AGENT_LINKS)
 
 **对应页面**: `/agent/[agentName]`
 **适用场景**: 修改 Agent 的表格链接或 Tab 分类。

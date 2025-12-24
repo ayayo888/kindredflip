@@ -304,6 +304,36 @@ export const LAB_ITEMS: LabItem[] = [
 // 4. ARTICLES (Gold Items)
 export const ARTICLES: ArticleItem[] = [
   {
+  id: 'unique-id-here',          // 唯一ID，不能重复
+  title: '[GOLD] 商品标题',
+  excerpt: '显示在卡片上的简短介绍',
+  image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766487642/samples/upscale-face-1.jpg',          // Cloudinary 图片链接
+  date: 'Oct 25, 2025',
+  author: 'YourName',
+  tags: ['Shoes', 'Review'],     // 标签，用于列表页的筛选按钮
+  rating: 5,                     // 1-5 星级
+  
+  // --- 首页显示控制 ---
+  isFeatured: true,              // 【关键】设为 true，才会同时出现在首页的 "Gold Spreadsheet" 区域
+  isSale: true,                  // 设为 true，图片上会显示 "Gold" 徽章
+
+  // --- 购买链接配置 ---
+  rawLink: 'https://weidian.com/item...', // 淘宝/微店原链接
+  agentLinks: {
+      'CNfans': 'https://cnfans.com/...', // 你的推广链接
+      'Mulebuy': 'https://mulebuy.com/...',
+  },
+
+  // --- 文章正文 (Markdown) ---
+  content: [
+    "这里是正文段落1。",
+    "", // 空字符串代表换行
+    "![图片说明](https://res.cloudinary.com/dl24hgcws/image/upload/v1766487639/samples/breakfast.jpg)", // 插入图片
+    "这里是正文段落2。"
+  ],
+  verdict: "总结评价"
+},
+  {
     id: 'a1',
     title: '[GOLD] Snanen 360° Magnetic Suction Phone Mount - Hands-Free',
     excerpt: 'The ultimate hands-free holder tested for stability and magnet strength.',
@@ -384,7 +414,7 @@ export const ARTICLES: ArticleItem[] = [
     author: 'CarMods',
     tags: ['Car', 'Tech'],
     rating: 4,
-    isFeatured: true,
+    isFeatured: false,
     isSale: true,
     // Example: No agent links configured yet, buttons will be disabled/hidden
   },
