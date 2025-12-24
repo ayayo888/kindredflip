@@ -38,6 +38,8 @@ export default async function AgentDetailPage(props: Props) {
   // Get Agent Config
   const agentConfig = AGENT_LINKS[key] || AGENT_LINKS['default'];
   const spreadsheetUrl = agentConfig.spreadsheet;
+  // Use affiliate/coupon link if available, otherwise fallback to spreadsheet URL
+  const couponUrl = agentConfig.affiliate || spreadsheetUrl;
   
   const GRID_CATEGORIES = [
       { name: 'SHOES', icon: Footprints },
@@ -282,7 +284,7 @@ export default async function AgentDetailPage(props: Props) {
                       <div className="text-6xl font-black mb-2 text-white text-stroke-black">{content.manifest.leftValue}</div>
                       <div className="font-bold mb-6">{content.manifest.leftSub}</div>
                       <a 
-                        href={spreadsheetUrl}
+                        href={couponUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-black text-white px-8 py-3 font-black uppercase text-sm hover:bg-white hover:text-black border-2 border-transparent hover:border-black transition-all rounded-lg"

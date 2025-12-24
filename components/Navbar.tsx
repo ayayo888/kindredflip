@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Menu, ChevronDown, Check, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { SITE_CONFIG } from '@/lib/constants';
@@ -15,16 +15,7 @@ const NAV_LINKS = [
   { name: 'Agent', path: '/agent' },
 ];
 
-const LANGUAGES = [
-  { code: 'en', label: 'English', flag: '🇺🇸' },
-  { code: 'fr', label: 'Français', flag: '🇫🇷' },
-  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
-  { code: 'es', label: 'Español', flag: '🇪🇸' },
-];
-
 const Navbar: React.FC = () => {
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState(LANGUAGES[0]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   // Hook usage: Safely handle potential null at the top level
@@ -70,43 +61,9 @@ const Navbar: React.FC = () => {
           })}
         </div>
 
-        {/* Right: Language Switcher & Mobile Toggle */}
+        {/* Right: Mobile Toggle */}
         <div className="flex items-center gap-4">
           
-          {/* Language Dropdown */}
-          <div className="relative">
-            <button 
-              onClick={() => setIsLangOpen(!isLangOpen)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-kf-offwhite transition-all font-bold"
-            >
-              <span className="text-xl">{selectedLang.flag}</span>
-              <span className="hidden sm:inline">{selectedLang.label}</span>
-              <ChevronDown className={`w-4 h-4 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            {/* Dropdown Menu */}
-            {isLangOpen && (
-              <div className="absolute top-full right-0 mt-2 w-48 bg-white border-2 border-black shadow-hard rounded-xl overflow-hidden py-1 z-50">
-                {LANGUAGES.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      setSelectedLang(lang);
-                      setIsLangOpen(false);
-                    }}
-                    className="w-full flex items-center justify-between px-4 py-2 hover:bg-kf-yellow/20 transition-colors text-left font-bold"
-                  >
-                    <span className="flex items-center gap-2">
-                        <span className="text-xl">{lang.flag}</span>
-                        {lang.label}
-                    </span>
-                    {selectedLang.code === lang.code && <Check className="w-4 h-4 text-kf-green" />}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
           {/* Mobile Menu Button */}
           <button 
             className="md:hidden p-2 border-2 border-black rounded-lg bg-kf-yellow shadow-hard-sm active:translate-y-1 active:shadow-none"

@@ -2,6 +2,7 @@ import React from 'react';
 import { Server, Ticket, Database, Wifi, Scale, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { AGENT_LINKS } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'China Agent Database 2026 | All Spreadsheets & Coupon Codes',
@@ -99,51 +100,69 @@ export default function AgentDatabasePage() {
               </div>
           ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {SORTED_AGENT_LIST.map((agent) => (
-                      <div 
-                        key={agent}
-                        className="flex flex-col h-full bg-white border-2 border-black rounded-xl overflow-hidden shadow-hard hover:shadow-hard-lg hover:-translate-y-1 transition-all duration-200"
-                      >
-                          {/* Card Header */}
-                          <div className="p-5 flex items-center justify-between border-b-2 border-gray-100 bg-gray-50">
-                              <h3 className="text-xl font-black uppercase tracking-tight">{agent}</h3>
-                              <div className="flex items-center gap-2">
-                                  <span className="text-[10px] font-mono font-bold text-gray-400">ONLINE</span>
-                                  <div className="w-3 h-3 bg-kf-green rounded-full shadow-[0_0_8px_rgba(0,200,83,0.6)]"></div>
+                  {SORTED_AGENT_LIST.map((agent) => {
+                      const agentKey = agent.toLowerCase();
+                      const config = AGENT_LINKS[agentKey];
+                      // Use affiliate link if available for the Coupons button
+                      const couponLink = config?.affiliate;
+
+                      return (
+                          <div 
+                            key={agent}
+                            className="flex flex-col h-full bg-white border-2 border-black rounded-xl overflow-hidden shadow-hard hover:shadow-hard-lg hover:-translate-y-1 transition-all duration-200"
+                          >
+                              {/* Card Header */}
+                              <div className="p-5 flex items-center justify-between border-b-2 border-gray-100 bg-gray-50">
+                                  <h3 className="text-xl font-black uppercase tracking-tight">{agent}</h3>
+                                  <div className="flex items-center gap-2">
+                                      <span className="text-[10px] font-mono font-bold text-gray-400">ONLINE</span>
+                                      <div className="w-3 h-3 bg-kf-green rounded-full shadow-[0_0_8px_rgba(0,200,83,0.6)]"></div>
+                                  </div>
+                              </div>
+
+                              {/* Card Body - Tech Decoration */}
+                              <div className="px-5 py-6 flex-grow flex items-center justify-between">
+                                  <div className="flex flex-col gap-1">
+                                      <span className="font-mono text-xs text-gray-400">SYSTEM_ID</span>
+                                      <span className="font-mono font-bold text-sm bg-gray-100 px-2 py-1 rounded w-fit">
+                                        {agent.substring(0, 3).toUpperCase()}-2026
+                                      </span>
+                                  </div>
+                                  <Database className="w-8 h-8 text-gray-200 stroke-1" />
+                              </div>
+
+                              {/* Card Footer - Split Buttons */}
+                              <div className="flex border-t-2 border-black">
+                                  {/* Spreadsheet Button (Primary) -> Internal Detail Page */}
+                                  <Link 
+                                    href={`/agent/${agentKey}`}
+                                    className="flex-1 bg-kf-yellow hover:bg-kf-black hover:text-white text-black font-black uppercase text-sm py-4 flex items-center justify-center gap-2 transition-colors border-r-2 border-black"
+                                  >
+                                      Spreadsheet
+                                  </Link>
+                                  
+                                  {/* Coupons Button (Secondary) -> External Link if available, else Internal */}
+                                  {couponLink ? (
+                                      <a 
+                                        href={couponLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-1 bg-white hover:bg-gray-100 text-black font-black uppercase text-sm py-4 flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                                      >
+                                          Coupons <Ticket className="w-4 h-4" />
+                                      </a>
+                                  ) : (
+                                      <Link 
+                                        href={`/agent/${agentKey}`}
+                                        className="flex-1 bg-white hover:bg-gray-100 text-black font-black uppercase text-sm py-4 flex items-center justify-center gap-2 transition-colors"
+                                      >
+                                          Coupons <Ticket className="w-4 h-4" />
+                                      </Link>
+                                  )}
                               </div>
                           </div>
-
-                          {/* Card Body - Tech Decoration */}
-                          <div className="px-5 py-6 flex-grow flex items-center justify-between">
-                              <div className="flex flex-col gap-1">
-                                  <span className="font-mono text-xs text-gray-400">SYSTEM_ID</span>
-                                  <span className="font-mono font-bold text-sm bg-gray-100 px-2 py-1 rounded w-fit">
-                                    {agent.substring(0, 3).toUpperCase()}-2026
-                                  </span>
-                              </div>
-                              <Database className="w-8 h-8 text-gray-200 stroke-1" />
-                          </div>
-
-                          {/* Card Footer - Split Buttons */}
-                          <div className="flex border-t-2 border-black">
-                              {/* Spreadsheet Button (Primary) */}
-                              <Link 
-                                href={`/agent/${agent.toLowerCase()}`}
-                                className="flex-1 bg-kf-yellow hover:bg-kf-black hover:text-white text-black font-black uppercase text-sm py-4 flex items-center justify-center gap-2 transition-colors border-r-2 border-black"
-                              >
-                                  Spreadsheet
-                              </Link>
-                              
-                              {/* Coupons Button (Secondary) */}
-                              <Link 
-                                href={`/agent/${agent.toLowerCase()}`}
-                                className="flex-1 bg-white hover:bg-gray-100 text-black font-black uppercase text-sm py-4 flex items-center justify-center gap-2 transition-colors"
-                              >
-                                  Coupons <Ticket className="w-4 h-4" />
-                              </Link>
-                          </div>
-                      </div>
-                  ))}
+                      );
+                  })}
               </div>
           )}
       </section>

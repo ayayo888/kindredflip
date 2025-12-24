@@ -156,7 +156,13 @@
       'SHOES': 'https://.../edit#gid=111',
       'HOODIES': 'https://.../edit#gid=222',
       // 如果没配，默认跳转到主表格链接
-  }
+  },
+
+  // 3. (新增) 优惠券/注册链接配置
+  // 配置此链接后：
+  // - 列表页的 "Coupons" 按钮会直接跳转到这里
+  // - 详情页的 "CLAIM COUPONS NOW" 按钮会直接跳转到这里
+  affiliate: 'https://cnfans.com/register/?ref=YOUR_CODE'
 },
 ```
 
@@ -198,6 +204,27 @@ agentLinks: {
 3.  在数组中添加新名字：`"NewCoolBuy"`。
 4.  **保存**。
 5.  现在你可以在 `lib/constants.ts` 中使用 `'NewCoolBuy': '...'` 了。
+
+---
+
+## 🟢 第六部分：配置社交媒体链接 (Discord & Telegram)
+
+**对应位置**: 首页顶部 Hero 区域按钮 & 右下角悬浮按钮。
+
+### 配置流程
+1. 打开 `lib/constants.ts`。
+2. 找到文件最顶部的 `SOCIAL_LINKS` 常量（通常在第 0 部分）。
+3. 将链接替换为你自己的社群链接。
+
+```typescript
+export const SOCIAL_LINKS = {
+  // 替换为你自己的 Discord 邀请链接
+  discord: 'https://discord.gg/your-invite-code',
+  
+  // 替换为你自己的 Telegram 频道链接
+  telegram: 'https://t.me/your-channel-link',
+};
+```
 
 ---
 
