@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { TestTube, XCircle, CheckCircle, AlertTriangle, ArrowRight } from 'lucide-react';
 import { LAB_ITEMS } from '@/lib/constants';
 
@@ -215,14 +214,8 @@ export default function TheLabClient() {
                       <div className="bg-white border-4 border-black p-4 shadow-hard relative overflow-hidden h-full flex flex-col z-10">
                           
                           {/* Image */}
-                          <div className="relative aspect-square bg-gray-100 border-2 border-black mb-4 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-300">
-                              <Image 
-                                src={item.image} 
-                                alt={item.title} 
-                                fill
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                                className="object-cover" 
-                              />
+                          <div className="aspect-square bg-gray-100 border-2 border-black mb-4 relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-300">
+                              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                               
                               {/* STAMP */}
                               <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-12 border-4 px-4 py-2 text-2xl font-black uppercase opacity-80 mix-blend-multiply z-20
@@ -295,9 +288,14 @@ export default function TheLabClient() {
 
       {/* 5. SECTION: STICKY CTA (Mobile Bottom Bar) */}
       <div className="fixed bottom-4 left-4 right-4 md:hidden z-50">
-          <Link href="/gold" className="block w-full bg-black text-kf-yellow border-4 border-white shadow-hard-lg rounded-xl p-4 flex items-center justify-center group active:scale-95 transition-transform">
-              <span className="font-black text-lg leading-none mr-2">GO TO GOLD SPREADSHEET</span>
-              <ArrowRight className="w-5 h-5" />
+          <Link href="/gold" className="block w-full bg-black text-kf-yellow border-4 border-white shadow-hard-lg rounded-xl p-4 flex items-center justify-between group active:scale-95 transition-transform">
+              <div className="flex flex-col">
+                  <span className="font-mono text-[10px] text-white uppercase tracking-wider">Tired of testing?</span>
+                  <span className="font-black text-lg leading-none">GO TO GOLD SPREADSHEET</span>
+              </div>
+              <div className="bg-kf-yellow text-black w-10 h-10 rounded-full flex items-center justify-center border-2 border-white">
+                  <ArrowRight className="w-6 h-6" />
+              </div>
           </Link>
       </div>
       
