@@ -19,8 +19,12 @@ const GoldGrid: React.FC<GoldGridProps> = ({ items }) => {
           <h2 className="text-3xl font-black uppercase tracking-wide">Gold Spreadsheet</h2>
         </div>
         
-        <Link href="/gold" className="group flex items-center gap-1 font-black text-lg hover:text-kf-blue transition-colors">
-          More
+        <Link 
+          href="/gold" 
+          className="group flex items-center gap-1 font-black text-lg hover:text-kf-blue transition-colors"
+          aria-label="View all Gold Spreadsheet items"
+        >
+          View Full List
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>

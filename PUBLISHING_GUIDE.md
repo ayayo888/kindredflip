@@ -162,6 +162,45 @@
 
 ---
 
+## 🟢 第五部分：配置购买链接与 Agent 支持 (Agent Selector)
+
+详情页的 "Buy on CNfans" 大按钮和 "Select Agent" 下拉菜单支持多种代理平台。
+
+### 1. 目前支持的 Agent 列表
+系统目前内置支持以下 29 个平台（**注意区分大小写**）：
+
+`CNfans`, `Mulebuy`, `Hoobuy`, `Kakobuy`, `Gtbuy`, `Vigorbuy`, `Eastmallbuy`, `Rizzitgo`, `Hipobuy`, `Tigbuy`, `Cnshopper`, `Oopbuy`, `Acbuy`, `Pingubuy`, `Pantherbuy`, `Ootdbuy`, `Itaobuy`, `Allchinabuy`, `Ponybuy`, `Cssbuy`, `Orientdig`, `Bbdbuy`, `Npbuy`, `Joyagoo`, `Sugargoo`, `Lovegobuy`, `Superbuy`, `Basetao`, `Hubbuycn`.
+
+### 2. 如何在商品中添加这些链接？
+在 `lib/constants.ts` 的 `ARTICLES` 或 `LAB_ITEMS` 中，找到 `agentLinks` 字段。
+
+**规则**：
+*   **CNfans**: 如果配置了，会显示为页面上最大的**主购买按钮**。
+*   **其他 Agent**: 如果配置了，会自动收纳进 "Select Agent" 下拉菜单。
+
+```typescript
+agentLinks: {
+    // 主按钮
+    'CNfans': 'https://cnfans.com/product/123456',
+    
+    // 下拉菜单项 (Key 必须与上方的支持列表拼写一致)
+    'Mulebuy': 'https://mulebuy.com/product/123456', 
+    'Hoobuy': 'https://hoobuy.com/product/123456',
+    'Sugargoo': 'https://sugargoo.com/...'
+}
+```
+
+### 3. 如何增加全新的 Agent 平台？
+如果未来出现了一个新平台（例如叫 "NewCoolBuy"），你需要修改代码才能让它出现在下拉菜单中。
+
+1.  打开文件：`components/AgentSelector.tsx`
+2.  找到顶部的 `ALL_SUPPORTED_AGENTS` 数组。
+3.  在数组中添加新名字：`"NewCoolBuy"`。
+4.  **保存**。
+5.  现在你可以在 `lib/constants.ts` 中使用 `'NewCoolBuy': '...'` 了。
+
+---
+
 ## ⚡️ Cloudinary 图片优化技巧
 
 为了让网站加载更快，在 `lib/constants.ts` 填入图片链接时，请直接填入原图链接即可。
