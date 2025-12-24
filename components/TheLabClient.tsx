@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { TestTube, XCircle, CheckCircle, AlertTriangle, ArrowRight } from 'lucide-react';
 import { LAB_ITEMS } from '@/lib/constants';
 
@@ -213,9 +214,15 @@ export default function TheLabClient() {
                       {/* Card Body */}
                       <div className="bg-white border-4 border-black p-4 shadow-hard relative overflow-hidden h-full flex flex-col z-10">
                           
-                          {/* Image */}
+                          {/* Image (Use Next.js Image for Optimization) */}
                           <div className="aspect-square bg-gray-100 border-2 border-black mb-4 relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-300">
-                              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                              <Image 
+                                src={item.image} 
+                                alt={item.title} 
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                                className="object-cover"
+                              />
                               
                               {/* STAMP */}
                               <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-12 border-4 px-4 py-2 text-2xl font-black uppercase opacity-80 mix-blend-multiply z-20
