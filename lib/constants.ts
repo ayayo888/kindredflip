@@ -69,34 +69,7 @@ export const CATEGORIES: CategoryItem[] = [
     itemCount: 1240,
     href: '/gold?category=shoes' 
   },
-  {
-  // --- 列表页字段 ---
-  id: 'airpods-pro-2',                      
-  category: 'TECH',             // SHOES, TECH, BAGS, ACCESSORIES
-  title: 'Apple AirPods Pro 2 Review',
-  price: '$249.00',
-  weight: '0.2kg',
-  status: 'PASS',                // PASS (绿色通过) 或 FAIL (红色避雷)
-  image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766487646/cld-sample.jpg',          
-  note: 'Incredible noise cancellation and seamless ecosystem integration.', 
-
-  // --- 详情页字段 ---
-  content: [
-      "## Sound Quality and Features",
-      "The second-generation AirPods Pro are a massive leap forward for Apple audio. The new H2 chip delivers noticeably richer bass and clearer highs compared to the original model. However, the real star of the show is the Active Noise Cancellation (ANC), which forces the world around you to fade into near silence.",
-      "![Product Detail Zoom](https://res.cloudinary.com/dl24hgcws/image/upload/v1766487644/samples/zoom.avif)", 
-      "Transparency mode is now adaptive, reducing harsh noises like sirens while keeping conversation natural. Battery life has also seen a solid bump, easily lasting 6 hours on a single charge. If you are already in the Apple ecosystem, these are simply the best earbuds you can buy right now."
-  ],
   
-  // 购买链接 (仅限 PASS 状态显示)
-  agentLinks: {
-      'Purchase': 'www.taobao.com'
-  },
-
-  // SEO 配置 (可选)
-  seoTitle: 'Apple AirPods Pro 2nd Gen Review 2024',
-  seoKeywords: ['apple', 'airpods pro', 'earbuds', 'noise cancellation']
-},
   { 
     id: '2', 
     name: 'Hoodies', 
@@ -189,6 +162,34 @@ export const CATEGORIES: CategoryItem[] = [
 
 // 3. LAB ITEMS (原 QC ITEMS 已被合并至此)
 export const LAB_ITEMS: LabItem[] = [
+  {
+  // --- 列表页字段 ---
+  id: '10',                      
+  category: 'TECH',             // SHOES, TECH, BAGS, ACCESSORIES
+  title: 'Apple AirPods Pro 2 Review',
+  price: '$249.00',
+  weight: '0.2kg',
+  status: 'PASS',                // PASS (绿色通过) 或 FAIL (红色避雷)
+  image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766487646/cld-sample.jpg',          
+  note: 'Incredible noise cancellation and seamless ecosystem integration.', 
+
+  // --- 详情页字段 ---
+  content: [
+      "## Sound Quality and Features",
+      "The second-generation AirPods Pro are a massive leap forward for Apple audio. The new H2 chip delivers noticeably richer bass and clearer highs compared to the original model. However, the real star of the show is the Active Noise Cancellation (ANC), which forces the world around you to fade into near silence.",
+      "![Product Detail Zoom](https://res.cloudinary.com/dl24hgcws/image/upload/v1766487644/samples/zoom.avif)", 
+      "Transparency mode is now adaptive, reducing harsh noises like sirens while keeping conversation natural. Battery life has also seen a solid bump, easily lasting 6 hours on a single charge. If you are already in the Apple ecosystem, these are simply the best earbuds you can buy right now."
+  ],
+  
+  // 购买链接 (仅限 PASS 状态显示)
+  agentLinks: {
+      'Purchase': 'www.taobao.com'
+  },
+
+  // SEO 配置 (可选)
+  seoTitle: 'Apple AirPods Pro 2nd Gen Review 2024',
+  seoKeywords: ['apple', 'airpods pro', 'earbuds', 'noise cancellation']
+},
   {
     id: 'l1',
     category: 'SHOES',
