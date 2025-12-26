@@ -28,12 +28,12 @@ Shop the Gold Tag for items tested for safety and materials.
             Join Discord
           </a>
           <a 
-            href={SOCIAL_LINKS.telegram}
+            href={SOCIAL_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-black px-8 py-4 rounded-xl border-2 border-black font-black text-lg shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer"
           >
-            Join Telegram
+            Join WhatsApp
           </a>
         </div>
       </div>

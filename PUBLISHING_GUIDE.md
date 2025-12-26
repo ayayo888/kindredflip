@@ -207,7 +207,7 @@ agentLinks: {
 
 ---
 
-## 🟢 第六部分：配置社交媒体链接 (Discord & Telegram)
+## 🟢 第六部分：配置社交媒体链接 (Discord & WhatsApp)
 
 **对应位置**: 首页顶部 Hero 区域按钮 & 右下角悬浮按钮。
 
@@ -221,8 +221,8 @@ export const SOCIAL_LINKS = {
   // 替换为你自己的 Discord 邀请链接
   discord: 'https://discord.gg/your-invite-code',
   
-  // 替换为你自己的 Telegram 频道链接
-  telegram: 'https://t.me/your-channel-link',
+  // 替换为你自己的 WhatsApp 群组或联系链接
+  whatsapp: 'https://wa.me/message/YOUR_LINK_HERE',
 };
 ```
 

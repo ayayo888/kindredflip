@@ -4,8 +4,8 @@ import { CategoryItem, ArticleItem, LabItem, AgentLinkConfig } from './types';
 // 0. SOCIAL MEDIA LINKS
 // =====================================================================
 export const SOCIAL_LINKS = {
-  discord: 'https://discord.gg/your-invite-code',
-  telegram: 'https://t.me/your-channel-link',
+  discord: 'https://discord.gg/vjzTND59Mz',
+  whatsapp: 'https://wa.me/message/CJTPURWFLLW2P1',
 };
 
 // =====================================================================
