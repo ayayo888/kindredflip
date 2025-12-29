@@ -208,7 +208,7 @@ export const LAB_ITEMS: LabItem[] = [
     "huilian 377 features",
     "smartlink chip airpods"
   ]
-}
+},
 {
   "id": "10",
   "category": "Airpods",
