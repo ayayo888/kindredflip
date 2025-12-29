@@ -163,7 +163,7 @@ export const CATEGORIES: CategoryItem[] = [
 // 3. LAB ITEMS (原 QC ITEMS 已被合并至此)
 export const LAB_ITEMS: LabItem[] = [
 {
-  "id": "airpods-super-copy-2024",
+  "id": "10",
   "category": "Airpods",
   "title": "AirPods Super Copy Review: The Secret Hierarchy of Replica Airpods",
   "price": "$20-$55.00",
