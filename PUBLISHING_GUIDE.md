@@ -229,6 +229,7 @@ export const SOCIAL_LINKS = {
 ---
 
 ## ⚡️ Cloudinary 图片优化技巧
+网站风格：Neo-Brutalism（新粗野主义）结合了 Pop Art（波普艺术） 元素的 Soft Brutalism。
 
 为了让网站加载更快，在 `lib/constants.ts` 填入图片链接时，请直接填入原图链接即可。
 
