@@ -163,6 +163,50 @@ export const CATEGORIES: CategoryItem[] = [
 // 3. LAB ITEMS (原 QC ITEMS 已被合并至此)
 export const LAB_ITEMS: LabItem[] = [
   {
+  "id": "8",
+  "category": "Airpods",
+  "title": "Tiger Build Review: Is This the \"King\" of Huaqiangbei Earbuds?",
+  "price": "$35-$65",
+  "weight": "0.06kg",
+  "status": "PASS",
+  "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767021442/nanobanana-image-1767021272469_tg4fpm.jpg",
+  "note": "The most stable, universally praised board maker in the replica game explained.",
+  "content": [
+    "## Who (or What) is Tiger Build?",
+    "If you've been digging around for the **best AirPods reps**, you've probably seen sellers bragging about \"Tiger Build\" (or *Yuehu* if they are using the Chinese name). But here's the confusing part: Tiger Build isn't the chip. It's the *Architect*.",
+    "Think of it this way: The Chip (usually made by Airoha) is the engine. But someone still has to design the car, choose the tires (battery), pick the sound system (speakers), and write the software that makes the dashboard light up. That's what a **Solution Provider** does.",
+    "Tiger Build is essentially the lead designer. They decide which outer shell to use, how to tune the EQ for better bass, and—most crucially—they code the firmware that handles the pop-up animations, the \"Find My\" location tracking, and the multi-device switching. ",
+    "## The Chip vs. The Builder",
+    "This is where people get ripped off. You can buy a pair of headphones with a high-end **Airoha 1562AE** chip, but if the motherboard was designed by a bad team, it will still suck.",
+    "The big players in **Huaqiangbei** are **Tiger Build (TB)**, **Haorui (HR)**, **Huilian (HL)**, and **Jieli (JL)**. While both Tiger Build and Haorui might use the exact same Airoha 1562AE chip, Tiger Build is basically the MVP. Their product lineup is huge, and their software just feels more polished.",
+    "## Reason #1 to Buy: It Just Works (Stability)",
+    "Let's be real: usually, when you buy tech from Huaqiangbei, you're gambling. Will it break in a week? Will the left ear stop pairing?",
+    "From a buyer's perspective, **Tiger Build** is famous for one thing: being the **\"Most Stable.\"** They have the lowest defect rate in the market. That's why Reddit and Discord communities love them. It's the safe bet.",
+    "**Bonus:** Because Tiger Build is so popular, the parts are standardized. If you lose your charging case, you can actually buy a replacement Tiger Build case from a completely different seller, and it will likely pair up perfectly. Try doing that with a random generic clone—good luck.",
+    "![tiger build](https://res.cloudinary.com/dl24hgcws/image/upload/v1767021817/nanobanana-image-1767021802326_xs8plf.jpg)",
+    "## Reason #2: The \"Flex\" Factor",
+    "Here is a little secret from the seller's side. Go search for **\"Top-tier / High-end\"** replicas. You will see every seller screaming \"Tiger Build\" or \"Airoha\" in their titles.",
+    "Why? Because it's a badge of honor. You clearly don't see them bragging about having a \"Bluetrum\" or \"Jieli\" chip (those are the budget, low-quality ones). Sellers know that the moment they put the Tiger Build name on the listing, people trust it. It is the universally accepted standard for \"Top-tier.\"",
+    "## The Verdict: Don't Get Scammed",
+    "Now that you know Tiger Build is the gold standard for stability, you need to be careful. Because these Super Copies are so accurate, they have created a dangerous side effect in the resale market.",
+    "Scammers are flooding places like Facebook Marketplace selling these high-end Tiger Build units as \"Unwanted Gifts\" for Retail Price. They look real, they act real, and they even switch devices like the real thing.",
+    "**How to stay safe:**",
+    "1.  **Check the Price:** If it's $40, it's a Tiger Build. If it's advertised as genuine Apple for $100 (but retails for $250), it's a scammer selling a Tiger Build.",
+    "2.  **Buy from trusted links:** Don't guess. Use the links below to make sure you get the actual Tiger board with the Airoha chip, not a cheap bait-and-switch.",
+    
+  ],
+  "agentLinks": {
+    "Tiger Build ": "https://kindredflip.com"
+  },
+  "seoTitle": "Tiger Build Review: Is This the \"King\" of Huaqiangbei Earbuds?",
+  "seoKeywords": [
+    "tiger build review",
+    "best airpods reps",
+    "huaqiangbei earbuds",
+    "tiger build features"
+  ]
+},
+  {
   "id": "9",
   "category": "Airpods",
   "title": "Huilian Chipset Review: Is This the Best Brain for Your AirPods Reps?",
