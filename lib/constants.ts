@@ -173,12 +173,12 @@ export const LAB_ITEMS: LabItem[] = [
   "note": "The most stable, universally praised board maker in the replica game explained.",
   "content": [
     "## Who (or What) is Tiger Build?",
-    "If you've been digging around for the **best AirPods reps**, you've probably seen sellers bragging about \"Tiger Build\" (or *Yuehu* if they are using the Chinese name). But here's the confusing part: Tiger Build isn't the chip. It's the *Architect*.",
+    "If you've been digging around for the [**best AirPods reps**](https://www.kindredflip.com/thelab/10), you've probably seen sellers bragging about \"Tiger Build\" (or *Yuehu* if they are using the Chinese name). But here's the confusing part: Tiger Build isn't the chip. It's the *Architect*.",
     "Think of it this way: The Chip (usually made by Airoha) is the engine. But someone still has to design the car, choose the tires (battery), pick the sound system (speakers), and write the software that makes the dashboard light up. That's what a **Solution Provider** does.",
     "Tiger Build is essentially the lead designer. They decide which outer shell to use, how to tune the EQ for better bass, and—most crucially—they code the firmware that handles the pop-up animations, the \"Find My\" location tracking, and the multi-device switching. ",
     "## The Chip vs. The Builder",
     "This is where people get ripped off. You can buy a pair of headphones with a high-end **Airoha 1562AE** chip, but if the motherboard was designed by a bad team, it will still suck.",
-    "The big players in **Huaqiangbei** are **Tiger Build (TB)**, **Haorui (HR)**, **Huilian (HL)**, and **Jieli (JL)**. While both Tiger Build and Haorui might use the exact same Airoha 1562AE chip, Tiger Build is basically the MVP. Their product lineup is huge, and their software just feels more polished.",
+    "The big players in **Huaqiangbei** are **Tiger Build (TB)**, **Haorui (HR)**, **[Huilian](https://www.kindredflip.com/thelab/9) (HL)**, and **Jieli (JL)**. While both Tiger Build and Haorui might use the exact same Airoha 1562AE chip, Tiger Build is basically the MVP. Their product lineup is huge, and their software just feels more polished.",
     "## Reason #1 to Buy: It Just Works (Stability)",
     "Let's be real: usually, when you buy tech from Huaqiangbei, you're gambling. Will it break in a week? Will the left ear stop pairing?",
     "From a buyer's perspective, **Tiger Build** is famous for one thing: being the **\"Most Stable.\"** They have the lowest defect rate in the market. That's why Reddit and Discord communities love them. It's the safe bet.",
@@ -217,7 +217,7 @@ export const LAB_ITEMS: LabItem[] = [
   "note": "A deep dive into the specific hardware running the best replicas.",
   "content": [
     "## What makes a fake AirPod \"Smart\"?",
-    "If you've spent any time looking for the best **AirPods reps**, you've definitely seen the name **Huilian** thrown around. But what is it? A brand? A factory? A type of plastic?",
+    "If you've spent any time looking for the [best **AirPods reps**](https://www.kindredflip.com/thelab/10), you've definitely seen the name **Huilian** thrown around. But what is it? A brand? A factory? A type of plastic?",
     "To understand why some replicas sound amazing and others sound like garbage, we have to look inside the stem. Specifically, at the PCB (the circuit board). This board holds the battery, the microphone, and most importantly, the **Chip**. Think of the chip as the CPU of the earbud. It's the brain running the whole show.",
     "![huilian clip](https://res.cloudinary.com/dl24hgcws/image/upload/v1767019023/%E6%85%A7%E8%81%94_-_%E5%B7%B2%E7%BC%96%E8%BE%91_mc84xx.jpg)",
     "## The Usual Suspects: Who makes the chips?",
