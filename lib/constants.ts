@@ -162,33 +162,60 @@ export const CATEGORIES: CategoryItem[] = [
 
 // 3. LAB ITEMS (原 QC ITEMS 已被合并至此)
 export const LAB_ITEMS: LabItem[] = [
-  {
-  // --- 列表页字段 ---
-  id: '10',                      
-  category: 'TECH',             // SHOES, TECH, BAGS, ACCESSORIES
-  title: 'Apple AirPods Pro 2 Review',
-  price: '$249.00',
-  weight: '0.2kg',
-  status: 'PASS',                // PASS (绿色通过) 或 FAIL (红色避雷)
-  image: 'https://res.cloudinary.com/dl24hgcws/image/upload/v1766487646/cld-sample.jpg',          
-  note: 'Incredible noise cancellation and seamless ecosystem integration.', 
-
-  // --- 详情页字段 ---
-  content: [
-      "## Sound Quality and Features",
-      "The second-generation AirPods Pro are a massive leap forward for Apple audio. The new H2 chip delivers noticeably richer bass and clearer highs compared to the original model. However, the real star of the show is the Active Noise Cancellation (ANC), which forces the world around you to fade into near silence.",
-      "![Product Detail Zoom](https://res.cloudinary.com/dl24hgcws/image/upload/v1766487644/samples/zoom.avif)", 
-      "Transparency mode is now adaptive, reducing harsh noises like sirens while keeping conversation natural. Battery life has also seen a solid bump, easily lasting 6 hours on a single charge. If you are already in the Apple ecosystem, these are simply the best earbuds you can buy right now."
+{
+  "id": "airpods-super-copy-2024",
+  "category": "Airpods",
+  "title": "AirPods Super Copy Review: The Secret Hierarchy of Replica Airpods",
+  "price": "$20-$55.00",
+  "weight": "0.06kg",
+  "status": "PASS",
+  "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767014690/chip_irudp2.jpg",
+  "note": "Three key things to build AirPods Super Copy",
+  "content": [
+    "## Are AirPods Super Copies Worth the Hype? The Truth Revealed",
+    "Let's be real: spending over $200 on earbuds that you might lose in a week feels painful. That’s probably why you’re here searching for an **AirPods super copy**. But the market is a minefield. You've heard the horror stories of reps breaking in two days or sounding like a tin can on a string.",
+    "However, not all replicas are created equal. In the shadowy world of Huaqiangbei electronics, there is a distinct hierarchy. Some are cheap knock-offs sold for only $1, while others—the \"Super Copies\"—are engineered with such precision that they are virtually indistinguishable from the real thing.",
+    "![Comparing Genuine vs Super Copy AirPods](https://placehold.co/600x300/png?text=Comparison+Genuine+vs+Replica)",
+    "In this review, I'm breaking down exactly why some reps slap while others fail, using a simple analogy to explain the tech stack behind them. If you're looking to save money without sacrificing quality, or just want to avoid getting scammed by a fake sold as \"new,\" stick around.",
+    "## The Three Pillars of a Premium Replica",
+    "Why is there such a massive gap in quality between a $1 fake and a $55 Super Copy? It all comes down to the supply chain. Making a pair of wireless headphones requires three distinct entities working in harmony. Let’s break it down with the **Pizza Analogy**.",
+    "### 1. The Chip Provider (The Magic Cheese Farm)",
+    "The chipset is the brain of the operation. In our pizza story, this is the 'magic cheese' that determines the potential flavor profile.",
+    "*   **Cheap Providers (e.g., Jeili):** This is your standard, processed supermarket cheese. It works, it's edible, but it's nothing special.",
+    "*   **Top-Tier Providers (e.g., Airoha, Huilian):** This is the artisanal, high-end magic cheese. It allows for advanced features like true noise cancellation and spatial audio.",
+    "**The Catch:** The absolute best chips are reserved for big brands like Sony or Apple. Replicas can't buy those. However, the top-tier \"Super Copy\" manufacturers use the next best thing—high-end chips from Airoha that get dangerously close to the original performance.",
+    "**Common High-End Chips to Look For:**",
+    "> Huilian-247B, Airoha-1562AE, Huilian-377, Huilian-277, Airoha-1571AM, Airoha-1563E",
+    "### 2. The Solution Provider (The Secret-Recipe Chef)",
+    "Having good cheese (chips) isn't enough; you need a chef to cook it. This is the PCB solution provider who writes the firmware and software.",
+    "Apple has unlimited resources to hire the world's best engineers. But the \"Super Copy\" market has its own master chefs. Companies like **Huilian** and **Tiger Build** act as the copycat experts.",
+    "These engineers are brilliant at reverse-engineering. They’ve cracked the code to make the pop-up animation appear instantly on your iPhone. With the latest top-tier solutions, 99% of users cannot tell the difference in a blind audio test. Unless you are a golden-eared audiophile, the sound signature on a properly tuned rep is shockingly good.",
+    "### 3. The Factory (The Kitchen Team)",
+    "Finally, the factory assembles the physical product. This is where the replica market truly shines today.",
+    "Modern Super Copy factories have mastered the external hardware. We're talking about a 1:1 match on:",
+    "*   **Build Quality:** The weight and magnetic hinge snap are identical.",
+    "*   **Materials:** The specific glossy white plastic feels premium, not hollow.",
+    "*   **Packaging:** Even the box text and pull-tabs are replicated perfectly.",
+    "When you unbox a \"Super Copy\" batch, you will likely think it's genuine for the first 10 minutes. The illusion is that complete.",
+    "## The Verdict: Don't Get Scammed",
+    "Now that you understand the level of sophistication involved, you need to be careful. Because these Super Copies are so accurate—combining the right chip, solution, and casing—they have created a dangerous side effect in the resale market.",
+    "This guide isn't just for buyers—it's for protection. Scammers are flooding places like Facebook Marketplace selling these high-end Super Copies as \"Unwanted Gifts\" for Retail Price.",
+    "**How to stay safe:**",
+    "1.  Always check the Find Me in the Bluetooth settings.",
+    "2.  Remember: if the price looks too good to be true for a \"genuine\" pair, it's probably a Super Copy.",
+    "Ready to find the right batch? Check out the trusted links below to ensure you get the premium Airoha chipset and not a cheap plastic toy."
   ],
-  
-  // 购买链接 (仅限 PASS 状态显示)
-  agentLinks: {
-      'Purchase': 'www.taobao.com'
+  "agentLinks": {
+    "Purchase (Airoha 1562AE)": "https://kindredflip.com"
   },
-
-  // SEO 配置 (可选)
-  seoTitle: 'Apple AirPods Pro 2nd Gen Review 2024',
-  seoKeywords: ['apple', 'airpods pro', 'earbuds', 'noise cancellation']
+  "seoTitle": "Best AirPods Super Copy Review 2026: Chip-Solution Provider-Factory",
+  "seoKeywords": [
+    "airpods super copy",
+    "best airpod reps 2026",
+    "airoha 1562ae review",
+    "huaqiangbei airpods",
+    "airpods replica guide"
+  ]
 },
   {
     id: 'l1',
