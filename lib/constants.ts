@@ -175,7 +175,7 @@ export const LAB_ITEMS: LabItem[] = [
     "## Are AirPods Super Copies Worth the Hype? The Truth Revealed",
     "Let's be real: spending over $200 on earbuds that you might lose in a week feels painful. That’s probably why you’re here searching for an **AirPods super copy**. But the market is a minefield. You've heard the horror stories of reps breaking in two days or sounding like a tin can on a string.",
     "However, not all replicas are created equal. In the shadowy world of Huaqiangbei electronics, there is a distinct hierarchy. Some are cheap knock-offs sold for only $1, while others—the \"Super Copies\"—are engineered with such precision that they are virtually indistinguishable from the real thing.",
-    "![Super Copy AirPods](https://res.cloudinary.com/dl24hgcws/image/upload/v1767016506/%E9%85%8D%E5%9B%BE1_qc8cfe.jpg)",
+    "![Super Copy AirPods](https://res.cloudinary.com/dl24hgcws/image/upload/v1767016986/%E9%85%8D%E5%9B%BE1_pypbvn.jpg)",
     "In this review, I'm breaking down exactly why some reps slap while others fail, using a simple analogy to explain the tech stack behind them. If you're looking to save money without sacrificing quality, or just want to avoid getting scammed by a fake sold as \"new,\" stick around.",
     "## The Three Pillars of a Premium Replica",
     "Why is there such a massive gap in quality between a $1 fake and a $55 Super Copy? It all comes down to the supply chain. Making a pair of wireless headphones requires three distinct entities working in harmony. Let’s break it down with the **Pizza Analogy**.",
