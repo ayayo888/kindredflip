@@ -226,7 +226,7 @@ export const LAB_ITEMS: LabItem[] = [
     "Fly CC vs CloudCC",
     "Huaqiangbei earbud app"
   ]
-}
+},
   {
   "id": "8",
   "category": "Airpods",
