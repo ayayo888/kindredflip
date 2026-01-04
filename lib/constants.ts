@@ -163,7 +163,7 @@ export const CATEGORIES: CategoryItem[] = [
 // 3. LAB ITEMS (原 QC ITEMS 已被合并至此)
 export const LAB_ITEMS: LabItem[] = [
   {
-  "id": "7",
+  "id": "6",
   "category": "Airpods",
   "title": "Tiger Build Gen 2 Review: Are These the Best Fake AirPods for Comfort?",
   "price": "$18.00 - $25.00",
@@ -552,17 +552,6 @@ export const ARTICLES: ArticleItem[] = [
     isFeatured: false,
     content: ["Full review content here..."]
   },
-   {
-    id: 'a6',
-    title: 'HAUL REVIEW: 15kg Summer Haul - Stussy, Corteiz, Nike',
-    excerpt: 'A massive breakdown of my latest shipment.',
-    image: 'https://picsum.photos/800/600?random=55',
-    date: 'Aug 22, 2025',
-    author: 'FashionKilla',
-    tags: ['Haul', 'Summer'],
-    rating: 5,
-    isFeatured: false
-  }
 ];
 
 export const GOLD_ITEMS = ARTICLES.filter(item => item.isFeatured);
