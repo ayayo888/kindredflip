@@ -165,6 +165,53 @@ export const LAB_ITEMS: LabItem[] = [
   {
   "id": "7",
   "category": "Airpods",
+  "title": "Tiger Build Gen 2 Review: Are These the Best Fake AirPods for Comfort?",
+  "price": "$18.00 - $25.00",
+  "weight": "0.04kg",
+  "status": "PASS",
+  "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767532117/nanobanana-image-1767531881320_g14rcc.jpg",
+  "note": "A deep dive into the classic Gen 2 style using the stable Tiger Build solution.",
+  "content": [
+    "## The Design That Refuses to Die",
+    "Let's be honest: The Gen 2 design is a legend. It has been about seven years, and people still love it. Why? Because not everyone wants silicone tips jammed deep into their ear canals. That \"open-ear\" fit is unmatched for long-term comfort.",
+    "But the replica market is a mess of confusing names and cheap junk. If you are hunting for the **best fake airpods** that focus on pure reliability rather than gimmicks, you need to look at the \"Top-tier\" version: the **Tiger Build** solution.",
+    "## The Secret Sauce: TB-Airoha-1562E",
+    "Here is the most important part of this review. When you are shopping, do not just buy \"Gen 2.\" You need to verify the chip. The gold standard right now is the **TB-Airoha-1562E**.",
+    "While cheaper versions use chips like BLUETRUM or the older 1562U, the **TB-Airoha-1562E** is the winner for a few specific reasons:",
+    "*   **Multipoint Pairing:** This is the killer feature. You can connect to two devices at once. It switches seamlessly between your iPad and your phone.",
+    "*   **Rock-Solid Stability:** Because this earbud is simple (no heavy noise cancellation processing), the connection is incredibly stable. It just works.",
+    "*   **Call Quality:** This chip handles microphones much better than budget versions. If you talk on the phone a lot, this is the one you want.",
+    "## The Upgrade: UF Edition with USB-C",
+    "Recently, a factory version known as **UF** (Gold Chamber) released a massive quality-of-life update that fixes the biggest annoyance of the older models.",
+    "They swapped the old Lightning port for **USB-C**. If you have an iPhone 15, iPhone 16, or an Android, this is huge. You can finally use one cable for your laptop, phone, and earbuds. No more carrying that one extra white cable just for your headphones.",
+    "## The Reality Check: What It CAN'T Do",
+    "I want to manage your expectations. Even though these are the top-tier versions, they are \"pure\" earbuds.",
+    "**1. No ANC (Noise Cancellation):** Because they don't seal your ear, they cannot block outside noise. If you are on a loud train, you will hear the train.",
+    "**2. No Spatial Audio:** You won't get the head-tracking surround sound effects.",
+    "**3. No Auto-EQ:** It doesn't tune the music to your ear shape.",
+    "## Who Should Buy These?",
+    "After testing the **TB-Airoha-1562E**, I recommend them for three specific groups:",
+    "*   **The \"Old School\" User:** If you are still using an iPhone 8 or X (especially on iOS 16 or older), these connect flawlessly.",
+    "*   **The Sensitive Ear Crowd:** If Pro-style rubber tips hurt your ears, this is your best option.",
+    "*   **The Value Hunter:** Getting multipoint connection and USB-C convenience for around $20 is an unbeatable deal.",
+    "### Verdict",
+    "If you don't need noise cancellation and just want a reliable, comfortable daily driver, the **TB-Airoha-1562E** (specifically the UF USB-C version) is the way to go."
+  ],
+  "agentLinks": {
+    "Search TB-Airoha-1562E": "https://www.kindredflip.com"
+  },
+  "seoTitle": "Tiger Build Review: The best fake airpods Gen 2 with USB-C",
+  "seoKeywords": [
+    "best fake airpods",
+    "Tiger Build review",
+    "TB-Airoha-1562E",
+    "Gen 2 replica USB-C",
+    "budget earbuds review"
+  ]
+},
+  {
+  "id": "7",
+  "category": "Airpods",
   "title": "Is Your Tiger Build Real? The Ultimate Fly CC App Guide",
   "price": "$0.00",
   "weight": "0.0kg",
@@ -373,114 +420,6 @@ export const LAB_ITEMS: LabItem[] = [
     "airpods replica guide"
   ]
 },
-  {
-    id: 'l1',
-    category: 'SHOES',
-    title: 'Nike Dunk Low "Panda" - VT Batch',
-    price: '$28.00',
-    weight: '1.1kg',
-    status: 'PASS',
-    image: 'https://picsum.photos/400/400?random=101',
-    note: 'Stitching accurate. Toebox shape 1:1. The leather feels slightly plasticky but acceptable for the price.',
-    date: '2025-10-20',
-    author: 'LabTech_01',
-    
-    // --- MANUAL SEO CONFIGURATION (Example) ---
-    seoTitle: 'Nike Dunk Low Panda VT Batch Review - Best Budget Batch 2025',
-    seoDescription: 'Full QC review of the $28 VT Batch Nike Dunk Panda. We verify weight, stitching, and leather quality. Find out if it is worth buying.',
-    seoKeywords: ['nike dunk low panda', 'vt batch dunks', 'cnfans shoes', 'budget dunks qc'],
-    // ------------------------------------------
-
-    content: [
-      "The VT Batch is widely considered the budget king for Dunks. We ordered these anonymously to verify if the quality holds up in late 2025.",
-      "The shape is excellent. The toebox flip matches retail pairs perfectly. The stitching on the swoosh is clean with no fraying.",
-      "However, the sole is slightly softer than retail. It might wear out faster if used for skating."
-    ],
-    rawLink: 'https://weidian.com/item.html?itemID=55555',
-    agentLinks: {
-        'CNfans': 'https://cnfans.com/product/example-pass',
-        'Mulebuy': 'https://mulebuy.com/product/example-pass'
-    }
-  },
-  {
-    id: 'l2',
-    category: 'TECH',
-    title: 'Air Max Wireless Headphones Gen 2',
-    price: '$15.00',
-    weight: '0.4kg',
-    status: 'FAIL',
-    image: 'https://picsum.photos/400/400?random=102',
-    note: 'Plastic hinge broke during stress test. Avoid. Sound quality is also muffled.',
-    date: '2025-10-18',
-    author: 'AudioDave',
-    content: [
-      "We had high hopes for this $15 replica, but it failed our durability test immediately.",
-      "Upon first fold, the plastic hinge snapped. The materials used are extremely brittle recycled plastic.",
-      "Bluetooth connectivity drops after 5 meters. Do not waste your money on this batch."
-    ],
-    // No links for FAIL items
-  },
-  {
-    id: 'l3',
-    category: 'HOODIES',
-    title: 'Essential Fear of God Hoodie 2024',
-    price: '$35.00',
-    weight: '0.9kg',
-    status: 'PASS',
-    image: 'https://picsum.photos/400/400?random=103',
-    note: 'Heavyweight cotton verified. Logo placement correct.',
-    date: '2025-10-15',
-    author: 'FashionKilla',
-    content: [
-      "This is a solid pass. The weight is 900g, which gives it that correct boxy drape.",
-      "The silicone logo on the chest is 3D and centered correctly. Previous batches had it too low."
-    ],
-    rawLink: 'https://taobao.com/item/123123',
-    agentLinks: {
-        'Hoobuy': 'https://hoobuy.com/product/example'
-    }
-  },
-  {
-    id: 'l4',
-    category: 'BAGS',
-    title: 'Supreme SS18 Shoulder Bag',
-    price: '$12.00',
-    weight: '0.2kg',
-    status: 'FAIL',
-    image: 'https://picsum.photos/400/400?random=104',
-    note: 'Strap text font is wrong (too thin). Zipper gets stuck.',
-    date: '2025-09-30',
-    author: 'HypeBeastCheck',
-    content: ["Font is completely wrong. Instant callout."],
-  },
-  {
-    id: 'l5',
-    category: 'SHOES',
-    title: 'Jordan 4 Military Black - Budget Batch',
-    price: '$45.00',
-    weight: '1.4kg',
-    status: 'PASS',
-    image: 'https://picsum.photos/400/400?random=105',
-    note: 'Surprisingly good for the price. Netting aligns correctly.',
-    rawLink: 'https://weidian.com/item/444',
-    agentLinks: {
-        'CNfans': 'https://cnfans.com/product/example-j4'
-    }
-  },
-  {
-    id: 'l6',
-    category: 'ACCESSORIES',
-    title: 'Chrome Hearts Ring (Silver Plated)',
-    price: '$8.00',
-    weight: '0.05kg',
-    status: 'PASS',
-    image: 'https://picsum.photos/400/400?random=106',
-    note: 'Lead test passed. No green skin.',
-    rawLink: 'https://taobao.com/item/ring',
-    agentLinks: {
-        'CNfans': 'https://cnfans.com/product/example-ring'
-    }
-  },
   
 ];
 
