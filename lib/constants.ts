@@ -164,7 +164,7 @@ export const CATEGORIES: CategoryItem[] = [
 export const LAB_ITEMS: LabItem[] = [
   {
   "id": "gen4-tb-1563e-review",
-  "category": "Earbuds",
+  "category": ["Airpods","Gen4"],
   "title": "Gen4-TB-1563E Review: Are These the Best Fake AirPods for Open-Ear Lovers?",
   "price": "$30.00",
   "weight": "0.05kg",
@@ -192,7 +192,7 @@ export const LAB_ITEMS: LabItem[] = [
     "Unlike in-ear models that use silicone tips to seal the ear canal, this design cannot block high-decibel noise. The ANC here functions more like a 'thin mist' rather than a solid wall. It can filter out light background fuzz and low-frequency hums, but it will not isolate you from a noisy subway or a chaotic office. It effectively softens the edges of noise rather than silencing it.",
     "## Verdict",
     "Is the **Gen4-TB-1563E** the **best fake AirPods** option for you? That depends entirely on your ear shape preference.",
-    "*   **Buy this if:** You prioritize comfort and hate the feeling of silicone tips jammed in your ears. If you want a lightweight, open-ear design with Type-C convenience and just enough noise reduction to take the edge off, this is a balanced choice.",
+    "*   **Buy this if:** You prioritize comfort and hate the feeling of silicone tips jammed in your ears. If you want the lightweight, open-ear design with Type-C convenience and just enough noise reduction to take the edge off, this is a balanced choice.",
     "*   **Skip this if:** You need isolation. If you are looking for powerful noise cancellation, you will be disappointed by the open-ear physics. You should instead look at models with better airtightness, such as the **Pro2-TB-1562AE** or the 1571AM."
   ],
   "agentLinks": {
@@ -206,11 +206,10 @@ export const LAB_ITEMS: LabItem[] = [
     "open ear ANC",
     "Tiger Build 1563E"
   ]
-}
-,
+},
   {
   "id": "5",
-  "category": "Airpods","Gen3-TB-1562E","Gen3",
+  "category": ["Airpods","Gen3"],
   "title": "Deep Dive: TB-Airoha-1562E Gen 3 Review - The Best Fake AirPods for Spatial Audio?",
   "price": "$30.00 - $35.00",
   "weight": "0.05kg",
@@ -251,11 +250,10 @@ export const LAB_ITEMS: LabItem[] = [
     "spatial audio review",
     "multipoint earbuds budget"
   ]
-}
-,
+},
   {
   "id": "6",
-  "category": "Airpods",
+  "category": ["Airpods","Gen2"],
   "title": "Tiger Build Gen 2 Review: Are These the Best Fake AirPods for Comfort?",
   "price": "$18.00 - $25.00",
   "weight": "0.04kg",
@@ -302,7 +300,7 @@ export const LAB_ITEMS: LabItem[] = [
 },
   {
   "id": "7",
-  "category": "Airpods",
+  "category": ["Airpods","Guide"],
   "title": "Is Your Tiger Build Real? The Ultimate Fly CC App Guide",
   "price": "$20.00",
   "weight": "0.05kg",
@@ -367,7 +365,7 @@ export const LAB_ITEMS: LabItem[] = [
 },
   {
   "id": "8",
-  "category": "Airpods",
+  "category": ["Airpods","Guide"],
   "title": "Tiger Build Review: Is This the \"King\" of Huaqiangbei Earbuds?",
   "price": "$35-$65",
   "weight": "0.06kg",
@@ -411,7 +409,7 @@ export const LAB_ITEMS: LabItem[] = [
 },
   {
   "id": "9",
-  "category": "Airpods",
+  "category": ["Airpods","Guide"],
   "title": "Huilian Chipset Review: Is This the Best Brain for Your AirPods Reps?",
   "price": "$20-$60",
   "weight": "0.06kg",
@@ -458,7 +456,7 @@ export const LAB_ITEMS: LabItem[] = [
 },
 {
   "id": "10",
-  "category": "Airpods",
+  "category": ["Airpods","Guide"],
   "title": "AirPods Super Copy Review: The Secret Hierarchy of Replica Airpods",
   "price": "$20-$55.00",
   "weight": "0.06kg",
@@ -495,7 +493,7 @@ export const LAB_ITEMS: LabItem[] = [
     "Now that you understand the level of sophistication involved, you need to be careful. Because these Super Copies are so accurate—combining the right chip, solution, and casing—they have created a dangerous side effect in the resale market.",
     "This guide isn't just for buyers—it's for protection. Scammers are flooding places like Facebook Marketplace selling these high-end Super Copies as \"Unwanted Gifts\" for Retail Price.",
     "**How to stay safe:**",
-    "1.  Always check the Find Me in the Bluetooth settings.",
+    "1.  Always check the Find Me in the Bluetooth settings. Cheap fakes often fail here.",
     "2.  Remember: if the price looks too good to be true for a \"genuine\" pair, it's probably a Super Copy.",
     "Ready to find the right batch? Check out the trusted links below to ensure you get the premium Airoha chipset and not a cheap plastic toy."
   ],
@@ -511,6 +509,7 @@ export const LAB_ITEMS: LabItem[] = [
     "airpods replica guide"
   ]
 },
+  
   
 ];
 
@@ -643,6 +642,17 @@ export const ARTICLES: ArticleItem[] = [
     isFeatured: false,
     content: ["Full review content here..."]
   },
+   {
+    id: 'a6',
+    title: 'HAUL REVIEW: 15kg Summer Haul - Stussy, Corteiz, Nike',
+    excerpt: 'A massive breakdown of my latest shipment.',
+    image: 'https://picsum.photos/800/600?random=55',
+    date: 'Aug 22, 2025',
+    author: 'FashionKilla',
+    tags: ['Haul', 'Summer'],
+    rating: 5,
+    isFeatured: false
+  }
 ];
 
 export const GOLD_ITEMS = ARTICLES.filter(item => item.isFeatured);

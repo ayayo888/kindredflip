@@ -15,12 +15,12 @@ export default function TheLabClient() {
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
 
   // 1. 动态提取分类 (Dynamic Category Extraction)
-  // 自动遍历 LAB_ITEMS 里的 category 字段，去重并排序
+  // 自动遍历 LAB_ITEMS 里的 category 数组，去重并排序
   const allCategories = useMemo(() => {
     const cats = new Set<string>(['ALL']);
     LAB_ITEMS.forEach(item => {
-      if (item.category) {
-        cats.add(item.category.toUpperCase());
+      if (item.category && Array.isArray(item.category)) {
+        item.category.forEach(c => cats.add(c.toUpperCase()));
       }
     });
     // 排序：保证 ALL 在第一个，其他按字母顺序
@@ -34,8 +34,12 @@ export default function TheLabClient() {
   // 2. 筛选逻辑 (Filters)
   const filteredItems = useMemo(() => {
     return LAB_ITEMS.filter(item => {
-        const itemCat = item.category ? item.category.toUpperCase() : '';
-        const catMatch = activeCategory === 'ALL' || itemCat === activeCategory;
+        // item.category is string[]
+        const itemCats = item.category.map(c => c.toUpperCase());
+        
+        // Check if item has the active category tag (or if ALL is selected)
+        const catMatch = activeCategory === 'ALL' || itemCats.includes(activeCategory);
+        
         const statusMatch = filterStatus === 'ALL' || item.status === filterStatus;
         return catMatch && statusMatch;
     });
@@ -206,9 +210,9 @@ export default function TheLabClient() {
                     className="relative mt-6 group block hover:-translate-y-1 transition-transform duration-200 cursor-pointer z-10"
                   >
                       
-                      {/* Folder Tab */}
-                      <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-4 border-b-0 border-black font-mono text-xs font-bold uppercase z-0 group-hover:z-20">
-                          {item.category}
+                      {/* Folder Tab (Shows Primary Category or 'Multi') */}
+                      <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-4 border-b-0 border-black font-mono text-xs font-bold uppercase z-0 group-hover:z-20 truncate max-w-[90%]">
+                          {item.category.join(' / ')}
                       </div>
 
                       {/* Card Body */}

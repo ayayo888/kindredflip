@@ -56,7 +56,7 @@ export default async function LabDetailPage(props: Props) {
         <header className="mb-8 relative">
             {/* Folder Tab Visual for Category */}
             <div className="absolute -top-8 left-0 bg-black text-white px-6 py-2 rounded-t-lg border-2 border-b-0 border-black font-mono font-black uppercase tracking-wider">
-                {item.category}
+                {item.category.join(' / ')}
             </div>
 
             <div className="bg-white border-2 border-black p-6 md:p-8 rounded-b-xl rounded-tr-xl shadow-hard">
@@ -120,7 +120,7 @@ export default async function LabDetailPage(props: Props) {
                                 <Tag className="w-5 h-5" /> Batch / Category
                             </div>
                             <span className="font-mono font-black text-lg bg-gray-100 px-3 py-1 rounded border border-gray-300">
-                                {item.category}
+                                {item.category.join(', ')}
                             </span>
                         </div>
 

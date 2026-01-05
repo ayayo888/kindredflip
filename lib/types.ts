@@ -17,7 +17,7 @@ export interface NavLink {
 
 export interface LabItem {
   id: string;
-  category: string;
+  category: string[]; // Changed from string to string[] for multiple tags
   title: string;
   price: string;
   weight: string;

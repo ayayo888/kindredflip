@@ -37,9 +37,9 @@ const TheLabGrid: React.FC<TheLabGridProps> = ({ items }) => {
               className="relative mt-6 group cursor-pointer hover:-translate-y-1 transition-transform duration-200 block z-10"
             >
                       
-                {/* Folder Tab */}
-                <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-[3px] border-b-0 border-black font-mono text-xs font-bold uppercase z-0 group-hover:z-20">
-                    {item.category}
+                {/* Folder Tab (Joined Categories) */}
+                <div className="absolute -top-6 left-0 bg-black text-white px-4 py-1 rounded-t-lg border-[3px] border-b-0 border-black font-mono text-xs font-bold uppercase z-0 group-hover:z-20 truncate max-w-[90%]">
+                    {item.category.join(' / ')}
                 </div>
 
                 {/* Card Body */}
