@@ -163,6 +163,97 @@ export const CATEGORIES: CategoryItem[] = [
 // 3. LAB ITEMS (原 QC ITEMS 已被合并至此)
 export const LAB_ITEMS: LabItem[] = [
   {
+  "id": "gen4-tb-1563e-review",
+  "category": "Earbuds",
+  "title": "Gen4-TB-1563E Review: Are These the Best Fake AirPods for Open-Ear Lovers?",
+  "price": "$30.00",
+  "weight": "0.05kg",
+  "status": "PASS",
+  "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767617882/nanobanana-image-1767617670367_tr5hh9.jpg",
+  "note": "A detailed look at the Gen4 replica, focusing on the new Type-C standard and the reality of ANC in an open-ear design.",
+  "content": [
+    "## Meeting the **Gen4-TB-1563E**",
+    "The search for the **best fake AirPods** is constantly evolving, and the introduction of the Gen 4 aesthetic has shifted the landscape. Today, we are reviewing the **Gen4-TB-1563E**, a model that targets the latest Apple Gen 4 semi-in-ear design. This unit is particularly interesting because it claims to offer Active Noise Cancellation (ANC) without the need for silicone ear tips.",
+    "This specific unit is the 'Zhenxiang' (Gold Standard) edition from the **TB (Tiger Build/Yuehu)** solution provider. It represents a mature attempt to balance comfort with modern features, but does it deliver on its promises? Let's break down the details.",
+    "## Design & Craftsmanship: Refined and Compact",
+    "Compared to the older **Gen3-TB-1562E**, the **Gen4-TB-1563E** features a noticeably optimized form factor. Both the earbud stems and the charging case have been shrunk down for a more portable, authentic feel.",
+    "The manufacturing team has focused heavily on 'stealth' refinements:",
+    "*   **Hidden Indicators:** The obvious external breathing light found on cheaper clones is gone. This model uses a hidden indicator light and an ultra-low profile reset button for a cleaner visual look.",
+    "*   **Type-C Standard:** A major quality-of-life upgrade is the switch to a **Type-C** charging interface. This significantly boosts compatibility for users in the Android ecosystem.",
+    "*   **Sealed Tail Plug:** This specific TB version features a sealed tail plug structure. This is engineered to improve voice pickup for calls and maximize whatever noise cancellation performance the chip can manage.",
+    "## Hardware Specs: The 1563E Chipset",
+    "Internally, the **Gen4-TB-1563E** is powered by the **Airoha 1563E** chip. This chipset is a staple for high-end replicas and ensures the device covers all modern necessities:",
+    "*   **Dual Connection:** It supports 1-to-2 multi-device pairing, allowing you to switch between a phone and a laptop effortlessly.",
+    "*   **FlyCC App:** Full compatibility with the FlyCC App allows for OTA firmware updates, audio customization, and button mapping.",
+    "*   **Interactive Case:** A built-in buzzer in the charging case provides sound feedback when you open the lid, charge the device, or perform a factory reset. This feature can be toggled off in the app if you prefer silence.",
+    "![Close up potential of Gen4-TB-1563E open case](https://res.cloudinary.com/dl24hgcws/image/upload/v1767617882/nanobanana-image-1767617863665_zf15jm.jpg)",
+    "## The Reality of Open-Ear ANC",
+    "While the **Gen4-TB-1563E** lists Active Noise Cancellation as a headline feature, we must be realistic about physics. Because this is a semi-in-ear (open-ear) design, the ANC performance is strictly **average**.",
+    "Unlike in-ear models that use silicone tips to seal the ear canal, this design cannot block high-decibel noise. The ANC here functions more like a 'thin mist' rather than a solid wall. It can filter out light background fuzz and low-frequency hums, but it will not isolate you from a noisy subway or a chaotic office. It effectively softens the edges of noise rather than silencing it.",
+    "## Verdict",
+    "Is the **Gen4-TB-1563E** the **best fake AirPods** option for you? That depends entirely on your ear shape preference.",
+    "*   **Buy this if:** You prioritize comfort and hate the feeling of silicone tips jammed in your ears. If you want a lightweight, open-ear design with Type-C convenience and just enough noise reduction to take the edge off, this is a balanced choice.",
+    "*   **Skip this if:** You need isolation. If you are looking for powerful noise cancellation, you will be disappointed by the open-ear physics. You should instead look at models with better airtightness, such as the **Pro2-TB-1562AE** or the 1571AM."
+  ],
+  "agentLinks": {
+    "FlyCC App Guide": "https://kindredflip.com"
+  },
+  "seoTitle": "Gen4-TB-1563E Review: Best Fake AirPods for Open-Ear ANC?",
+  "seoKeywords": [
+    "best fake airpods",
+    "Gen4-TB-1563E",
+    "AirPods 4 replica review",
+    "open ear ANC",
+    "Tiger Build 1563E"
+  ]
+}
+,
+  {
+  "id": "5",
+  "category": "Airpods","Gen3-TB-1562E","Gen3",
+  "title": "Deep Dive: TB-Airoha-1562E Gen 3 Review - The Best Fake AirPods for Spatial Audio?",
+  "price": "$30.00 - $35.00",
+  "weight": "0.05kg",
+  "status": "PASS",
+  "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767617292/nanobanana-image-1767616918921_ttag8l.jpg",
+  "note": "A comprehensive review of the Gen 3 Tiger Build edition. Features the Airoha 1562E chip, real 9-axis spatial audio, and excellent battery life.",
+  "content": [
+    "## The Hunt for the \"Comfort King\"",
+    "If you are looking for the **best fake airpods** on the market right now, you usually have to choose between noise cancellation (Gen Pro 2 style) or pure comfort (Gen 3 style). Today, we are looking at the leading contender for the latter: the **TB-Airoha-1562E** (Gen 3 version).",
+    "This model is built by the **Tiger Build** team, and it's making waves because it packs premium features into a $30 package. Let's break down if it's actually worth your money.",
+    "*(The Gen 3 style case showing the compact design)*",
+    "## Build Quality: Closing the Gap",
+    "The first thing you notice with the **TB-Airoha-1562E** is the construction. In the past, cheaper replicas had rough seams where the plastic joined together. This unit is different. The seams are tight and smooth.",
+    "The factory also nailed the small details. The wind-proof net looks and feels authentic. But the real star is the hinge. It has a \"slow-drop\" feel—it doesn't just snap shut cheaply; it has a nice, weighted resistance that feels premium.",
+    "## The Brains: Why the 1562E Matters",
+    "Inside, this unit runs on the **Airoha 1562E** chip. This is the same powerhouse chip used in the top-tier Gen 2 replicas. It includes a light sensor for In-Ear Detection. This means when you pull an earbud out, the music pauses instantly. When you put it back in, it plays. It's fast and responsive.",
+    "## Spatial Audio: It's Actually Real",
+    "Here is where the **TB-Airoha-1562E** separates itself from the $10 gas station versions. It features a **Dual 9-Axis Gyroscope**. Why does that matter?",
+    "Most cheaper buds fake \"Spatial Audio\" by just adding echo. This unit actually tracks your head movement. It tracks left, right, and even up and down. If you turn your head, the sound source stays \"locked\" in place. It's like a 3D hologram for your ears.",
+    "![Spatial Audio Diagram](https://res.cloudinary.com/dl24hgcws/image/upload/v1767617292/nanobanana-image-1767617238671_kievqh.jpg)",
+    "*(Demonstrating head tracking features)*",
+    "## Connectivity & Multipoint",
+    "Another massive win for this chip is **Multipoint Pairing**. You can connect to two devices at once—like your iPhone and your iPad. If you're watching a movie on your iPad and your phone rings, the audio switches over automatically. It's seamless.",
+    "## Battery Life & Comfort",
+    "The Gen 3 shape is widely considered the most comfortable design Apple ever made because it sits in your ear without jamming into your canal. If you hate silicone tips, this is the one for you.",
+    "Battery-wise, it's a beast. You get about **8 hours** on a single charge, with the case boosting total time to over **20 hours**. That is plenty for a full week of commuting.",
+    "### The Verdict",
+    "For around $30, the **TB-Airoha-1562E** Gen 3 is a fantastic deal. It offers real head-tracking Spatial Audio, great battery life, and that famous open-ear comfort. If you want the **best fake airpods** for casual listening without silicone tips, this is the winner."
+  ],
+  "agentLinks": {
+    "Search TB-Airoha-1562E Gen 3": "https://www.kindredflip.com"
+  },
+  "seoTitle": "Review: TB-Airoha-1562E Gen 3 - The Best Fake AirPods for Comfort?",
+  "seoKeywords": [
+    "best fake airpods",
+    "TB-Airoha-1562E",
+    "Tiger Build Gen 3",
+    "spatial audio review",
+    "multipoint earbuds budget"
+  ]
+}
+,
+  {
   "id": "6",
   "category": "Airpods",
   "title": "Tiger Build Gen 2 Review: Are These the Best Fake AirPods for Comfort?",
@@ -213,8 +304,8 @@ export const LAB_ITEMS: LabItem[] = [
   "id": "7",
   "category": "Airpods",
   "title": "Is Your Tiger Build Real? The Ultimate Fly CC App Guide",
-  "price": "$0.00",
-  "weight": "0.0kg",
+  "price": "$20.00",
+  "weight": "0.05kg",
   "status": "PASS",
   "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767508197/nanobanana-image-1767508183526_cgu1o3.jpg",
   "note": "The definitive guide to checking chipset authenticity and customizing settings for Tiger Build earbuds.",
