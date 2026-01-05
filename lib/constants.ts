@@ -171,6 +171,8 @@ export const LAB_ITEMS: LabItem[] = [
   "status": "PASS",
   "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767617882/nanobanana-image-1767617670367_tr5hh9.jpg",
   "note": "A detailed look at the Gen4 replica, focusing on the new Type-C standard and the reality of ANC in an open-ear design.",
+  "date": "2026-1-05",
+  "author": "Audio_Lab",
   "content": [
     "## Meeting the **Gen4-TB-1563E**",
     "The search for the **best fake AirPods** is constantly evolving, and the introduction of the Gen 4 aesthetic has shifted the landscape. Today, we are reviewing the **Gen4-TB-1563E**, a model that targets the latest Apple Gen 4 semi-in-ear design. This unit is particularly interesting because it claims to offer Active Noise Cancellation (ANC) without the need for silicone ear tips.",
@@ -216,6 +218,8 @@ export const LAB_ITEMS: LabItem[] = [
   "status": "PASS",
   "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767617292/nanobanana-image-1767616918921_ttag8l.jpg",
   "note": "A comprehensive review of the Gen 3 Tiger Build edition. Features the Airoha 1562E chip, real 9-axis spatial audio, and excellent battery life.",
+  "date": "2026-1-05",
+  "author": "Kindred_Audio",
   "content": [
     "## The Hunt for the \"Comfort King\"",
     "If you are looking for the **best fake airpods** on the market right now, you usually have to choose between noise cancellation (Gen Pro 2 style) or pure comfort (Gen 3 style). Today, we are looking at the leading contender for the latter: the **TB-Airoha-1562E** (Gen 3 version).",
@@ -260,6 +264,8 @@ export const LAB_ITEMS: LabItem[] = [
   "status": "PASS",
   "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767532117/nanobanana-image-1767531881320_g14rcc.jpg",
   "note": "A deep dive into the classic Gen 2 style using the stable Tiger Build solution.",
+  "date": "2026-1-04",
+  "author": "Kindred_Audio",
   "content": [
     "## The Design That Refuses to Die",
     "Let's be honest: The Gen 2 design is a legend. It has been about seven years, and people still love it. Why? Because not everyone wants silicone tips jammed deep into their ear canals. That \"open-ear\" fit is unmatched for long-term comfort.",
@@ -307,6 +313,8 @@ export const LAB_ITEMS: LabItem[] = [
   "status": "PASS",
   "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767508197/nanobanana-image-1767508183526_cgu1o3.jpg",
   "note": "The definitive guide to checking chipset authenticity and customizing settings for Tiger Build earbuds.",
+  "date": "2026-1-03",
+  "author": "Tech_Guide",
   "content": [
     "So, you picked up a pair of replicas, and the seller insists they are the high-end **Tiger Build** (also known as Ruihu). But how do you know for sure? You don't have to guess. The answer is an app called **Fly CC**.",
     "## The Compatibility Rule: Tiger Build Only",
@@ -372,6 +380,8 @@ export const LAB_ITEMS: LabItem[] = [
   "status": "PASS",
   "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767021442/nanobanana-image-1767021272469_tg4fpm.jpg",
   "note": "The most stable, universally praised board maker in the replica game explained.",
+  "date": "2026-1-03",
+  "author": "Kindred_Lab",
   "content": [
     "## Who (or What) is Tiger Build?",
     "If you've been digging around for the [**best AirPods reps**](https://www.kindredflip.com/thelab/10), you've probably seen sellers bragging about \"Tiger Build\" (or *Yuehu* if they are using the Chinese name). But here's the confusing part: Tiger Build isn't the chip. It's the *Architect*.",
@@ -416,6 +426,8 @@ export const LAB_ITEMS: LabItem[] = [
   "status": "PASS",
   "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767019286/nanobanana-image-1767019271489_baziu9.png",
   "note": "A deep dive into the specific hardware running the best replicas.",
+  "date": "2026-1-02",
+  "author": "Tech_Deep_Dive",
   "content": [
     "## What makes a fake AirPod \"Smart\"?",
     "If you've spent any time looking for the [best **AirPods reps**](https://www.kindredflip.com/thelab/10), you've definitely seen the name **Huilian** thrown around. But what is it? A brand? A factory? A type of plastic?",
@@ -463,6 +475,8 @@ export const LAB_ITEMS: LabItem[] = [
   "status": "PASS",
   "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767016257/nanobanana-image-1767016214611_twcsou.png",
   "note": "Three key things to build AirPods Super Copy",
+  "date": "2026-1-01",
+  "author": "Kindred_Lab",
   "content": [
     "## Are AirPods Super Copies Worth the Hype? The Truth Revealed",
     "Let's be real: spending over $200 on earbuds that you might lose in a week feels painful. That’s probably why you’re here searching for an **AirPods super copy**. But the market is a minefield. You've heard the horror stories of reps breaking in two days or sounding like a tin can on a string.",
@@ -509,7 +523,7 @@ export const LAB_ITEMS: LabItem[] = [
     "airpods replica guide"
   ]
 },
-  
+ 
   
 ];
 
