@@ -163,6 +163,56 @@ export const CATEGORIES: CategoryItem[] = [
 // 3. LAB ITEMS (原 QC ITEMS 已被合并至此)
 export const LAB_ITEMS: LabItem[] = [
   {
+  "id": "Version",
+  "category": ["Guide", "Version","Airpods"],
+  "title": "Decoding Huaqiangbei: The Universal Naming System for Replica AirPods",
+  "price": "N/A",
+  "weight": "0.00kg",
+  "status": "PASS",
+  "image": "https://res.cloudinary.com/dl24hgcws/image/upload/v1767885523/nanobanana-image-1767885408594_p4y3bv.jpg",
+  "note": "A standardized approach to understanding replica versions.",
+  "date": "2026-1-08",
+  "author": "Uncle-K",
+  "content": [
+    "## Stop Getting Scammed by Crappy Names",
+    "If you have ever tried to buy a pair of high-end replica earbuds, you have likely run into a wall of confusing jargon. Sellers throw around terms like \"V5.4 Huilian,\" \"Super Pod,\" or \"Gen 9 Max.\" In the Chinese market, these names (like \"Five Generation Yuehu\") make sense to locals, but for the international buyer, it is a recipe for disaster.",
+    "To bring clarity to the chaos, we have established a strict, universal **Standardized Naming Rule**. This system removes the marketing fluff so you know exactly what you are buying.",
+    "The Formula is simple: **[Target Model] - [Provider] - [Chip]** *(e.g., Gen2-TB-1562E)*.",
+    "![Naming System Diagram](https://res.cloudinary.com/dl24hgcws/image/upload/v1767886725/nanobanana-image-1767886711448_je1nby.jpg)",
+    "## Part 1: The Target Model (The Shape)",
+    "The first part of the ID tells you which Apple product the replica is copying. This determines the fit and the basic features.",
+    "*   **Gen Series (Gen2 / Gen3):** These are semi-in-ear designs. They sit loosely in the ear *without* silicone tips. If you dislike the feeling of plugged ears or have sensitive ear canals, this is your zone. However, their Active Noise Cancellation (ANC) performance is significantly weaker due to the open seal.",
+    "*   **Pro Series (Pro / Pro2):** These are in-ear designs featuring silicone tips. The tips create a seal that blocks outside noise, allowing for powerful ANC functionality. If you want silence on a commute, you go Pro.",
+    "## Part 2: The Solution Provider (The Brains)",
+    "This is the most critical metric for quality. In the replica world, the factory is responsible for assembly, while the **Solution Provider** selects the hardware and develops the software that determines performance.",
+    "Just looking at the exterior tells you nothing. You need to know who coded the board. We use simple abbreviations for the top-tier providers:",
+    "*   **TB:** Tiger Build (Yuehu/Ruihu)",
+    "*   **HL:** Huilian",
+    "*   **HR:** Haorui",
+    "Why does this matter? A generic \"Pro 2\" replica might cost $10, but a \"Pro2-TB\" uses a premium PCB with legitimate firmware updates. The Solution Provider is a major factor in determining the quality of a replica. You can learn more about the differences between these providers in our deep dive here: [Solution Provider Details](https://www.kindredflip.com/thelab/10).",
+    "## Part 3: The Chip (The Engine)",
+    "If the Provider is the architect, the Chip is the engine. The third part of our naming code identifies the specific Silicon inside via an alphanumeric code (e.g., 1562AE, 1562E, 247B).",
+    "While rep manufacturers sometimes use confusing marketing names, the actual chip numbers usually align with the hardware inside. You can even verify this using software like FlyCC, where the numeric code matches the manufacturer's designation (e.g., the '1562E' name aligns with the Airoha AB1562 chip). To learn more relevant details about these chips, read our full breakdown here: [Chipset Guide](https://www.kindredflip.com/thelab/9).",
+    "## Part 4: The Suffix (Custom Variants)",
+    "Occasionally, you will see a fourth tag at the end of the name, such as **Pro2-HR-1562AE-LD** or **-YD**. These are specific to the **HR (Haorui)** provider.",
+    "These suffixes (like LD or YD) represent customized batches made for specific Chinese distributors. They usually indicate minor tweaks in tuning or battery configuration, but the core DNA remains the HR-1562AE platform.",
+    "## The Verdict",
+    "Don't buy based on hype words like \"Max\" or \"Ultra.\" By decoding the product name into **Target-Provider-Chip**, you effectively strip away the marketing lies and see the hardware for what it really is."
+  ],
+  "agentLinks": {
+    "Provider Analysis": "https://www.kindredflip.com/thelab/10",
+    "Chip Breakdown": "https://www.kindredflip.com/thelab/9"
+  },
+  "seoTitle": "Replica AirPods Naming Guide: Gen, Tub, and Chip Codes Explained",
+  "seoKeywords": [
+    "fake airpods naming guide",
+    "huaqiangbei airpods codes",
+    "TB vs HL airpods",
+    "Gen2 vs Pro2 replica",
+    "airoha 1562ae vs 1562e"
+  ]
+},
+  {
   "id": "Pro2-TB-1562AE",
   "category": ["Airpods", "Pro2-TB-1562AE","TIGERBUILD","Pro2"],
   "title": "Is the Pro2-TB-1562AE the Best Fake AirPods Pro 2? A Brutally Honest Review",
