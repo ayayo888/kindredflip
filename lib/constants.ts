@@ -164,7 +164,7 @@ export const CATEGORIES: CategoryItem[] = [
 export const LAB_ITEMS: LabItem[] = [
   {
   "id": "Pro2-TB-1562AE",
-  "category": ["Airpods", "Pro2-TB-1562AE","Pro2"],
+  "category": ["Airpods", "Pro2-TB-1562AE","TIGERBUILD","Pro2"],
   "title": "Is the Pro2-TB-1562AE the Best Fake AirPods Pro 2? A Brutally Honest Review",
   "price": "$30.00-$45.00",
   "weight": "0.06kg",
